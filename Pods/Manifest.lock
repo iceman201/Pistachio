@@ -1,0 +1,16 @@
+PODS:
+  - nlohmann_json (3.5.0)
+
+DEPENDENCIES:
+  - nlohmann_json (~> 3.5.0)
+
+SPEC REPOS:
+  trunk:
+    - nlohmann_json
+
+SPEC CHECKSUMS:
+  nlohmann_json: 022916edfe803dbae86ada9799ca550f005e1daf
+
+PODFILE CHECKSUM: f1ec4588cd03d5967a7214e286dcda7844685703
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,6 @@
+framework module Pods_Pistacchio_PistacchioUITests {
+  umbrella header "Pods-Pistacchio-PistacchioUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
