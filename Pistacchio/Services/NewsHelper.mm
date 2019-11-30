@@ -24,12 +24,21 @@
     if (self)
     {
         self.apiUrl = apiUrl;
-        [self fetchAllNewsData];
+        [self fetchAllNewsData:^(BOOL success) {
+            if (success)
+            {
+                
+            }
+            else
+            {
+                NSLog(@"ss");
+            }
+        }];
     }
     return self;
 }
 
-- (void)fetchAllNewsData
+- (void)fetchAllNewsData:(void(^) (BOOL success))finished
 {
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:self.apiUrl]];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -40,19 +49,22 @@
         {
             NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             const char * _Nullable text = [jsonString UTF8String];
-
             news_by_topic::json data = news_by_topic::json::parse(text);
-
             auto news = data.get<news_by_topic::Welcome>();
             self->docs = news.get_response()->get_docs();
+            finished(YES);
+        }
+        else
+        {
+            finished(NO);
         }
     }];
     [task resume];
 }
 
-- (void)gaga
+- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getArticles
 {
-    
+    return self->docs;
 }
 
 @end
