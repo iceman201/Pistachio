@@ -3,20 +3,24 @@ PODS:
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
+  - PureLayout (3.1.5)
 
 DEPENDENCIES:
   - nlohmann_json (~> 3.5.0)
   - NVActivityIndicatorView
+  - PureLayout
 
 SPEC REPOS:
   trunk:
     - nlohmann_json
     - NVActivityIndicatorView
+    - PureLayout
 
 SPEC CHECKSUMS:
   nlohmann_json: 022916edfe803dbae86ada9799ca550f005e1daf
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
 
-PODFILE CHECKSUM: cb7ff658bffa40a3ae4cfedb1babe2831c731fd1
+PODFILE CHECKSUM: c866220ae6c4506ec0a91ff4b71037500338db2c
 
 COCOAPODS: 1.8.4

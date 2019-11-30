@@ -6,6 +6,7 @@ target 'Pistacchio' do
   use_frameworks!
   pod 'nlohmann_json', '~>3.5.0'
   pod 'NVActivityIndicatorView'
+  pod 'PureLayout'
 
   target 'PistacchioTests' do
     inherit! :search_paths
