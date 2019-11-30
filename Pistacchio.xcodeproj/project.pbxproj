@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05FAB0AD23925339005EDE16 /* NewsHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0AC23925339005EDE16 /* NewsHelper.mm */; };
 		42070A5C9A680EB818CC7595 /* Pods_Pistacchio_PistacchioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C031C7CE5BC5D1272BB75A /* Pods_Pistacchio_PistacchioUITests.framework */; };
 		BAE9296A8286DB6F0478B12A /* Pods_PistacchioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79A522D32966855767709BD /* Pods_PistacchioTests.framework */; };
 		D2B45C746D91D11E17FA9453 /* Pods_Pistacchio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760A43BAEEAA57017D47C6A6 /* Pods_Pistacchio.framework */; };
@@ -19,7 +20,6 @@
 		EAFC4B042390AD3E003CC2AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4B032390AD3E003CC2AD /* main.m */; };
 		EAFC4B0E2390AD3E003CC2AD /* PistacchioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4B0D2390AD3E003CC2AD /* PistacchioTests.m */; };
 		EAFC4B192390AD3E003CC2AD /* PistacchioUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4B182390AD3E003CC2AD /* PistacchioUITests.m */; };
-		EAFC4B292390B024003CC2AD /* NewsTopic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4B272390B024003CC2AD /* NewsTopic.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05FAB0AB23925339005EDE16 /* NewsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewsHelper.h; path = Pistacchio/Services/NewsHelper.h; sourceTree = SOURCE_ROOT; };
+		05FAB0AC23925339005EDE16 /* NewsHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = NewsHelper.mm; path = Pistacchio/Services/NewsHelper.mm; sourceTree = SOURCE_ROOT; };
+		05FAB0AF23925F61005EDE16 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
 		20C031C7CE5BC5D1272BB75A /* Pods_Pistacchio_PistacchioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pistacchio_PistacchioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5093F19AF7FBAA62B4C90A2C /* Pods-PistacchioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PistacchioTests.release.xcconfig"; path = "Target Support Files/Pods-PistacchioTests/Pods-PistacchioTests.release.xcconfig"; sourceTree = "<group>"; };
 		6E75B5EAA24A0CAA66433F41 /* Pods-PistacchioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PistacchioTests.debug.xcconfig"; path = "Target Support Files/Pods-PistacchioTests/Pods-PistacchioTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,7 +70,6 @@
 		EAFC4B142390AD3E003CC2AD /* PistacchioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PistacchioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFC4B182390AD3E003CC2AD /* PistacchioUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PistacchioUITests.m; sourceTree = "<group>"; };
 		EAFC4B1A2390AD3E003CC2AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAFC4B272390B024003CC2AD /* NewsTopic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NewsTopic.cpp; sourceTree = "<group>"; };
 		EAFC4B282390B024003CC2AD /* NewsTopic.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NewsTopic.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05FAB0AE23925344005EDE16 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				05FAB0AB23925339005EDE16 /* NewsHelper.h */,
+				05FAB0AC23925339005EDE16 /* NewsHelper.mm */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		92FC694A55DF77BE2BEFD0B8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				EAFC4B262390AD51003CC2AD /* Model */,
+				05FAB0AE23925344005EDE16 /* Services */,
 				EAFC4AF12390AD3A003CC2AD /* AppDelegate.h */,
 				EAFC4AF22390AD3A003CC2AD /* AppDelegate.m */,
 				EAFC4AF42390AD3A003CC2AD /* SceneDelegate.h */,
@@ -159,6 +171,7 @@
 				EAFC4AFF2390AD3E003CC2AD /* LaunchScreen.storyboard */,
 				EAFC4B022390AD3E003CC2AD /* Info.plist */,
 				EAFC4B032390AD3E003CC2AD /* main.m */,
+				05FAB0AF23925F61005EDE16 /* macros.h */,
 			);
 			path = Pistacchio;
 			sourceTree = "<group>";
@@ -185,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				EAFC4B282390B024003CC2AD /* NewsTopic.hpp */,
-				EAFC4B272390B024003CC2AD /* NewsTopic.cpp */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,8 +406,8 @@
 			files = (
 				EAFC4AF92390AD3A003CC2AD /* ViewController.mm in Sources */,
 				EAFC4AF32390AD3A003CC2AD /* AppDelegate.m in Sources */,
-				EAFC4B292390B024003CC2AD /* NewsTopic.cpp in Sources */,
 				EAFC4B042390AD3E003CC2AD /* main.m in Sources */,
+				05FAB0AD23925339005EDE16 /* NewsHelper.mm in Sources */,
 				EAFC4AF62390AD3A003CC2AD /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +578,7 @@
 			baseConfigurationReference = 777CC78DCA0F61DF46330232 /* Pods-Pistacchio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8436A3G9R2;
 				INFOPLIST_FILE = Pistacchio/Info.plist;
@@ -584,6 +597,7 @@
 			baseConfigurationReference = D8F11ABE87FABE88EB05D937 /* Pods-Pistacchio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8436A3G9R2;
 				INFOPLIST_FILE = Pistacchio/Info.plist;
