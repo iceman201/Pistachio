@@ -27,8 +27,15 @@
     NewsHelper *news = [[NewsHelper alloc] init:apiUrl];
     [news getArticles];
     [self.view setBackgroundColor:[UIColor redColor]];
+
+    UIView *ha = [[UIView alloc] initForAutoLayout];
+    [ha setBackgroundColor:[UIColor yellowColor]];
+    [self.view addSubview:ha];
+    [ha autoPinEdgeToSuperviewEdge:ALEdgeLeading];
+    [ha autoPinEdgeToSuperviewEdge:ALEdgeTrailing];
+    [ha autoPinEdgeToSuperviewSafeArea:ALEdgeTop];
+    [ha autoPinEdgeToSuperviewSafeArea:ALEdgeBottom];
     
 }
-//https://api.nytimes.com/svc/search/v2/articlesearch.json?q=finance&page=10&sort=newest&api-key=DzA9CAMEDhbyT6AYhW0CzdftgT623Fni"
 
 @end
