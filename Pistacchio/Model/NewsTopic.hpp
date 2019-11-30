@@ -294,7 +294,7 @@ namespace news_by_topic {
         void set_crop_name(std::shared_ptr<std::string> value) { this->crop_name = value; }
     };
 
-    enum class TypeOfMaterial : int { BRIEFING, NEWS };
+    enum class TypeOfMaterial : int { BRIEFING, NEWS, OTHER };
     
     class Doc {
         public:
@@ -780,7 +780,10 @@ namespace nlohmann {
     inline void from_json(const json & j, news_by_topic::TypeOfMaterial & x) {
         if (j == "briefing") x = news_by_topic::TypeOfMaterial::BRIEFING;
         else if (j == "News") x = news_by_topic::TypeOfMaterial::NEWS;
-        else throw "Input JSON does not conform to schema";
+        else{
+            x = news_by_topic::TypeOfMaterial::OTHER;
+            std::cout << j;
+        }
     }
 
     inline void to_json(json & j, const news_by_topic::TypeOfMaterial & x) {

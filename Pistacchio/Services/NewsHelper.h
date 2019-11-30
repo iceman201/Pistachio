@@ -20,11 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSString *apiUrl;
 
 - (instancetype)init:(NSString *)apiUrl;
+- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getArticles;
 @end
 NS_ASSUME_NONNULL_END
-
-class NewsHelperCpp {
-    public:
-        static std::shared_ptr<std::vector<news_by_topic::Doc>> docs;
-
-};

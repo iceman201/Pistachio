@@ -18,9 +18,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NewsHelper *news = [[NewsHelper alloc] init:@"https://api.nytimes.com/svc/search/v2/articlesearch.json?q=finance&page=10&sort=newest&api-key=DzA9CAMEDhbyT6AYhW0CzdftgT623Fni"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Services" ofType:@"plist"];
+    NSDictionary *service = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSString *api = [service valueForKey:@"ArticleSearch"];
+    NSString *topic = @"finance&page";
+    NSString *token = @"DzA9CAMEDhbyT6AYhW0CzdftgT623Fni";
+    NSString *apiUrl = [NSString stringWithFormat:@"%@?q=%@page=10&sort=newest&api-key=%@", api, topic, token];
+    NewsHelper *news = [[NewsHelper alloc] init:apiUrl];
+    [news getArticles];
+    [self.view setBackgroundColor:[UIColor redColor]];
     
 }
-
+//https://api.nytimes.com/svc/search/v2/articlesearch.json?q=finance&page=10&sort=newest&api-key=DzA9CAMEDhbyT6AYhW0CzdftgT623Fni"
 
 @end
