@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "NewsHelper.h"
+
 
 @interface ViewController ()
 
@@ -18,24 +18,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Services" ofType:@"plist"];
-    NSDictionary *service = [NSDictionary dictionaryWithContentsOfFile:path];
-    NSString *api = [service valueForKey:@"ArticleSearch"];
-    NSString *topic = @"finance&page";
-    NSString *token = @"DzA9CAMEDhbyT6AYhW0CzdftgT623Fni";
-    NSString *apiUrl = [NSString stringWithFormat:@"%@?q=%@page=10&sort=newest&api-key=%@", api, topic, token];
-    NewsHelper *news = [[NewsHelper alloc] init:apiUrl];
-    [news getArticles];
+
     [self.view setBackgroundColor:[UIColor redColor]];
 
-    UIView *ha = [[UIView alloc] initForAutoLayout];
+    UIButton *ha = [[UIButton alloc] initForAutoLayout];
+    [ha addTarget:self action:@selector(tapTest) forControlEvents:UIControlEventTouchUpInside];
     [ha setBackgroundColor:[UIColor yellowColor]];
     [self.view addSubview:ha];
     [ha autoPinEdgeToSuperviewEdge:ALEdgeLeading];
     [ha autoPinEdgeToSuperviewEdge:ALEdgeTrailing];
     [ha autoPinEdgeToSuperviewSafeArea:ALEdgeTop];
     [ha autoPinEdgeToSuperviewSafeArea:ALEdgeBottom];
+
     
+}
+
+- (void)tapTest
+{
+//    [self.services serviceStart];
 }
 
 @end

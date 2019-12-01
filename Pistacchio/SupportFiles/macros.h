@@ -10,7 +10,6 @@
  *  Safely use self inside blocks without introducing reference cycles.
  *  Inpired by @weakify and @strongify from libextobjc / extobjc / EXTScope.h
  *
- *  @author arrix
  *
  *  WEAK_SELF defines __weak weakSelf
  *

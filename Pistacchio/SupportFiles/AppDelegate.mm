@@ -7,17 +7,27 @@
 //
 
 #import "AppDelegate.h"
+#import "NewsHelper.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) NewsHelper *services;
 @end
 
 @implementation AppDelegate
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NewsHelper *services = [[NewsHelper alloc] init];
+        [services setDelegate:self];
+        self.services = services;
+    }
+    return self;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
+    [self.services serviceStart];
     return YES;
 }
 

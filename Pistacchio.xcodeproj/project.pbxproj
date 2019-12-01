@@ -13,7 +13,7 @@
 		42070A5C9A680EB818CC7595 /* Pods_Pistacchio_PistacchioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C031C7CE5BC5D1272BB75A /* Pods_Pistacchio_PistacchioUITests.framework */; };
 		BAE9296A8286DB6F0478B12A /* Pods_PistacchioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79A522D32966855767709BD /* Pods_PistacchioTests.framework */; };
 		D2B45C746D91D11E17FA9453 /* Pods_Pistacchio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760A43BAEEAA57017D47C6A6 /* Pods_Pistacchio.framework */; };
-		EAFC4AF32390AD3A003CC2AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF22390AD3A003CC2AD /* AppDelegate.m */; };
+		EAFC4AF32390AD3A003CC2AD /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF22390AD3A003CC2AD /* AppDelegate.mm */; };
 		EAFC4AF62390AD3A003CC2AD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF52390AD3A003CC2AD /* SceneDelegate.m */; };
 		EAFC4AF92390AD3A003CC2AD /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF82390AD3A003CC2AD /* ViewController.mm */; };
 		EAFC4AFC2390AD3A003CC2AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFC4AFA2390AD3A003CC2AD /* Main.storyboard */; };
@@ -59,7 +59,7 @@
 		D8F11ABE87FABE88EB05D937 /* Pods-Pistacchio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pistacchio.release.xcconfig"; path = "Target Support Files/Pods-Pistacchio/Pods-Pistacchio.release.xcconfig"; sourceTree = "<group>"; };
 		EAFC4AEE2390AD3A003CC2AD /* Pistacchio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pistacchio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFC4AF12390AD3A003CC2AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EAFC4AF22390AD3A003CC2AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EAFC4AF22390AD3A003CC2AD /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		EAFC4AF42390AD3A003CC2AD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		EAFC4AF52390AD3A003CC2AD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		EAFC4AF72390AD3A003CC2AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				05FAB0B223926A45005EDE16 /* BaseViewController.h */,
 				05FAB0B323926A45005EDE16 /* BaseViewController.m */,
 				EAFC4AF12390AD3A003CC2AD /* AppDelegate.h */,
-				EAFC4AF22390AD3A003CC2AD /* AppDelegate.m */,
+				EAFC4AF22390AD3A003CC2AD /* AppDelegate.mm */,
 				EAFC4AF42390AD3A003CC2AD /* SceneDelegate.h */,
 				EAFC4AF52390AD3A003CC2AD /* SceneDelegate.m */,
 				EAFC4AFD2390AD3E003CC2AD /* Assets.xcassets */,
@@ -467,7 +467,7 @@
 			files = (
 				EAFC4AF92390AD3A003CC2AD /* ViewController.mm in Sources */,
 				05FAB0B423926A45005EDE16 /* BaseViewController.m in Sources */,
-				EAFC4AF32390AD3A003CC2AD /* AppDelegate.m in Sources */,
+				EAFC4AF32390AD3A003CC2AD /* AppDelegate.mm in Sources */,
 				EAFC4B042390AD3E003CC2AD /* main.m in Sources */,
 				05FAB0AD23925339005EDE16 /* NewsHelper.mm in Sources */,
 				EAFC4AF62390AD3A003CC2AD /* SceneDelegate.m in Sources */,
