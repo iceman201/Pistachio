@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05FAB0AD23925339005EDE16 /* NewsHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0AC23925339005EDE16 /* NewsHelper.mm */; };
+		050D2EDE239383BB00CC296E /* News.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EDD239383BB00CC296E /* News.cpp */; };
+		05FAB0AD23925339005EDE16 /* NetworkServices.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0AC23925339005EDE16 /* NetworkServices.mm */; };
 		05FAB0B12392641E005EDE16 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FAB0B02392641E005EDE16 /* Services.plist */; };
 		05FAB0B423926A45005EDE16 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0B323926A45005EDE16 /* BaseViewController.m */; };
 		42070A5C9A680EB818CC7595 /* Pods_Pistacchio_PistacchioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C031C7CE5BC5D1272BB75A /* Pods_Pistacchio_PistacchioUITests.framework */; };
@@ -15,8 +16,7 @@
 		D2B45C746D91D11E17FA9453 /* Pods_Pistacchio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760A43BAEEAA57017D47C6A6 /* Pods_Pistacchio.framework */; };
 		EAFC4AF32390AD3A003CC2AD /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF22390AD3A003CC2AD /* AppDelegate.mm */; };
 		EAFC4AF62390AD3A003CC2AD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF52390AD3A003CC2AD /* SceneDelegate.m */; };
-		EAFC4AF92390AD3A003CC2AD /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF82390AD3A003CC2AD /* ViewController.mm */; };
-		EAFC4AFC2390AD3A003CC2AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFC4AFA2390AD3A003CC2AD /* Main.storyboard */; };
+		EAFC4AF92390AD3A003CC2AD /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF82390AD3A003CC2AD /* MainViewController.mm */; };
 		EAFC4AFE2390AD3E003CC2AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAFC4AFD2390AD3E003CC2AD /* Assets.xcassets */; };
 		EAFC4B012390AD3E003CC2AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFC4AFF2390AD3E003CC2AD /* LaunchScreen.storyboard */; };
 		EAFC4B042390AD3E003CC2AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4B032390AD3E003CC2AD /* main.m */; };
@@ -42,10 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05FAB0AB23925339005EDE16 /* NewsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewsHelper.h; path = Pistacchio/Services/NewsHelper.h; sourceTree = SOURCE_ROOT; };
-		05FAB0AC23925339005EDE16 /* NewsHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = NewsHelper.mm; path = Pistacchio/Services/NewsHelper.mm; sourceTree = SOURCE_ROOT; };
+		050D2EDD239383BB00CC296E /* News.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = News.cpp; sourceTree = "<group>"; };
+		05FAB0AB23925339005EDE16 /* NetworkServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkServices.h; path = Pistacchio/Services/NetworkServices.h; sourceTree = SOURCE_ROOT; };
+		05FAB0AC23925339005EDE16 /* NetworkServices.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = NetworkServices.mm; path = Pistacchio/Services/NetworkServices.mm; sourceTree = SOURCE_ROOT; };
 		05FAB0AF23925F61005EDE16 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
-		05FAB0B02392641E005EDE16 /* Services.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Services.plist; sourceTree = "<group>"; };
+		05FAB0B02392641E005EDE16 /* Services.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Services.plist; path = Services/Services.plist; sourceTree = "<group>"; };
 		05FAB0B223926A45005EDE16 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		05FAB0B323926A45005EDE16 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		20C031C7CE5BC5D1272BB75A /* Pods_Pistacchio_PistacchioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pistacchio_PistacchioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,9 +63,8 @@
 		EAFC4AF22390AD3A003CC2AD /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		EAFC4AF42390AD3A003CC2AD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		EAFC4AF52390AD3A003CC2AD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		EAFC4AF72390AD3A003CC2AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EAFC4AF82390AD3A003CC2AD /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
-		EAFC4AFB2390AD3A003CC2AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EAFC4AF72390AD3A003CC2AD /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		EAFC4AF82390AD3A003CC2AD /* MainViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
 		EAFC4AFD2390AD3E003CC2AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAFC4B002390AD3E003CC2AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAFC4B022390AD3E003CC2AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		EAFC4B142390AD3E003CC2AD /* PistacchioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PistacchioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFC4B182390AD3E003CC2AD /* PistacchioUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PistacchioUITests.m; sourceTree = "<group>"; };
 		EAFC4B1A2390AD3E003CC2AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAFC4B282390B024003CC2AD /* NewsTopic.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NewsTopic.hpp; sourceTree = "<group>"; };
+		EAFC4B282390B024003CC2AD /* News.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = News.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +109,8 @@
 		05FAB0AE23925344005EDE16 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				05FAB0AB23925339005EDE16 /* NewsHelper.h */,
-				05FAB0AC23925339005EDE16 /* NewsHelper.mm */,
-				05FAB0B02392641E005EDE16 /* Services.plist */,
+				05FAB0AB23925339005EDE16 /* NetworkServices.h */,
+				05FAB0AC23925339005EDE16 /* NetworkServices.mm */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -135,7 +134,6 @@
 		05FAB0B623926ADA005EDE16 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				EAFC4AFA2390AD3A003CC2AD /* Main.storyboard */,
 				EAFC4AFF2390AD3E003CC2AD /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -191,11 +189,12 @@
 			children = (
 				EAFC4B262390AD51003CC2AD /* Model */,
 				05FAB0AE23925344005EDE16 /* Services */,
-				EAFC4AF72390AD3A003CC2AD /* ViewController.h */,
-				EAFC4AF82390AD3A003CC2AD /* ViewController.mm */,
+				EAFC4AF72390AD3A003CC2AD /* MainViewController.h */,
+				EAFC4AF82390AD3A003CC2AD /* MainViewController.mm */,
 				05FAB0B623926ADA005EDE16 /* Storyboards */,
 				05FAB0B523926A81005EDE16 /* SupportFiles */,
 				EAFC4B022390AD3E003CC2AD /* Info.plist */,
+				05FAB0B02392641E005EDE16 /* Services.plist */,
 			);
 			path = Pistacchio;
 			sourceTree = "<group>";
@@ -221,7 +220,8 @@
 		EAFC4B262390AD51003CC2AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EAFC4B282390B024003CC2AD /* NewsTopic.hpp */,
+				EAFC4B282390B024003CC2AD /* News.hpp */,
+				050D2EDD239383BB00CC296E /* News.cpp */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,7 +337,6 @@
 				05FAB0B12392641E005EDE16 /* Services.plist in Resources */,
 				EAFC4B012390AD3E003CC2AD /* LaunchScreen.storyboard in Resources */,
 				EAFC4AFE2390AD3E003CC2AD /* Assets.xcassets in Resources */,
-				EAFC4AFC2390AD3A003CC2AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,11 +464,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAFC4AF92390AD3A003CC2AD /* ViewController.mm in Sources */,
+				EAFC4AF92390AD3A003CC2AD /* MainViewController.mm in Sources */,
 				05FAB0B423926A45005EDE16 /* BaseViewController.m in Sources */,
 				EAFC4AF32390AD3A003CC2AD /* AppDelegate.mm in Sources */,
 				EAFC4B042390AD3E003CC2AD /* main.m in Sources */,
-				05FAB0AD23925339005EDE16 /* NewsHelper.mm in Sources */,
+				050D2EDE239383BB00CC296E /* News.cpp in Sources */,
+				05FAB0AD23925339005EDE16 /* NetworkServices.mm in Sources */,
 				EAFC4AF62390AD3A003CC2AD /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,14 +506,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EAFC4AFA2390AD3A003CC2AD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EAFC4AFB2390AD3A003CC2AD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EAFC4AFF2390AD3E003CC2AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -6,23 +6,19 @@
 //  Copyright © 2019 Liguo Jiao. All rights reserved.
 //
 
-#import "NewsHelper.h"
-#include "NewsTopic.hpp"
+#import "NetworkServices.h"
 #import "macros.h"
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include <ostream>
 
-@interface NewsHelper()
+
+@interface NetworkServices()
 {
     std::shared_ptr<std::vector<news_by_topic::Doc>> docs;
 }
-@property (nonatomic, weak) id<NetworkServices> delegate;
-//static NewsHelper *newsServices;
+@property (nonatomic, weak) id<NetworkServicesDelegate> delegate;
+
 @end
 
-@implementation NewsHelper
+@implementation NetworkServices
 
 - (void)setDelegate:(id)delegate
 {
@@ -37,6 +33,18 @@
             NSLog(@"haha");
         }
     }];
+}
+
+- (NSString *)getServerAddress
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Services" ofType:@"plist"];
+    NSDictionary *service = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSString *address = [service valueForKey:@"ArticleSearch"];
+    NSString *topic = @"finance&page";
+    NSString *token = @"DzA9CAMEDhbyT6AYhW0CzdftgT623Fni";
+    //https://api.nytimes.com/svc/search/v2/articlesearch.json ?page=50&q=finance&sort=relevance&api-key=
+    NSString *apiUrl = [NSString stringWithFormat:@"%@?page=50&q=%@&sort=relevance&api-key=%@", address, topic, token];
+    return apiUrl;
 }
 
 - (void)fetchAllNewsData:(void(^) (BOOL success))finished
@@ -71,20 +79,8 @@
     [task resume];
 }
 
-- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getArticles
+- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getNews
 {
-    return self->docs;
+    return self -> docs;
 }
-
-- (NSString *)getServerAddress
-{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Services" ofType:@"plist"];
-    NSDictionary *service = [NSDictionary dictionaryWithContentsOfFile:path];
-    NSString *api = [service valueForKey:@"ArticleSearch"];
-    NSString *topic = @"finance&page";
-    NSString *token = @"DzA9CAMEDhbyT6AYhW0CzdftgT623Fni";
-    NSString *apiUrl = [NSString stringWithFormat:@"%@?q=%@page=10&sort=newest&api-key=%@", api, topic, token];
-    return apiUrl;
-}
-
 @end

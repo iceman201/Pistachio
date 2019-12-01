@@ -6,14 +6,13 @@
 //  Copyright © 2019 Liguo Jiao. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 
-
-@interface ViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad
 {
@@ -29,13 +28,13 @@
     [ha autoPinEdgeToSuperviewEdge:ALEdgeTrailing];
     [ha autoPinEdgeToSuperviewSafeArea:ALEdgeTop];
     [ha autoPinEdgeToSuperviewSafeArea:ALEdgeBottom];
-
-    
+//    self.services 
 }
 
 - (void)tapTest
 {
 //    [self.services serviceStart];
 }
+
 
 @end
