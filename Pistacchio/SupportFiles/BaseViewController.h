@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "macros.h"
 #import <PureLayout/PureLayout.h>
+#import "NewsHelper.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
