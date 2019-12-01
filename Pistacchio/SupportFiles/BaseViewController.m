@@ -8,11 +8,21 @@
 
 #import "BaseViewController.h"
 
+
 @interface BaseViewController ()
 
 @end
 
 @implementation BaseViewController
+
+- (instancetype)initWithNetworkServices:(NetworkServices *)services
+{
+    self = [super init];
+    if (self) {
+        self.services = services;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

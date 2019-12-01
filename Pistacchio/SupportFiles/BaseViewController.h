@@ -7,15 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "macros.h"
 #import <PureLayout/PureLayout.h>
-#import "NewsHelper.h"
-
+#import "macros.h"
+#include "NetworkServices.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
+@property (nonatomic, strong) NetworkServices *services;
 
+- (instancetype)initWithNetworkServices:(NetworkServices *)services;
 @end
 
 NS_ASSUME_NONNULL_END

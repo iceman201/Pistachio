@@ -7,19 +7,18 @@
 //
 
 #import <UIKit/UIkit.h>
+#include "News.hpp"
 
-
-//- (instancetype)init:(NSString *)apiUrl;
-//- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getArticles;
 NS_ASSUME_NONNULL_BEGIN
 
-@class NewsHelper;
-@protocol NetworkServices <NSObject>
+@class NetworkServicesDelegate;
+@protocol NetworkServicesDelegate <NSObject>
 - (void)serviceStart;
 @end
 
-@interface NewsHelper: NSObject <NetworkServices>
+@interface NetworkServices: NSObject <NetworkServicesDelegate>
 - (void)setDelegate:(id)delegate;
+- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getNews;
 @end
 
 NS_ASSUME_NONNULL_END
