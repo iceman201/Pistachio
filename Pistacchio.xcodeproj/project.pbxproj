@@ -10,12 +10,12 @@
 		050D2EDE239383BB00CC296E /* News.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EDD239383BB00CC296E /* News.cpp */; };
 		05FAB0AD23925339005EDE16 /* NetworkServices.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0AC23925339005EDE16 /* NetworkServices.mm */; };
 		05FAB0B12392641E005EDE16 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FAB0B02392641E005EDE16 /* Services.plist */; };
-		05FAB0B423926A45005EDE16 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0B323926A45005EDE16 /* BaseViewController.m */; };
+		05FAB0B423926A45005EDE16 /* BaseViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0B323926A45005EDE16 /* BaseViewController.mm */; };
 		42070A5C9A680EB818CC7595 /* Pods_Pistacchio_PistacchioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C031C7CE5BC5D1272BB75A /* Pods_Pistacchio_PistacchioUITests.framework */; };
 		BAE9296A8286DB6F0478B12A /* Pods_PistacchioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79A522D32966855767709BD /* Pods_PistacchioTests.framework */; };
 		D2B45C746D91D11E17FA9453 /* Pods_Pistacchio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760A43BAEEAA57017D47C6A6 /* Pods_Pistacchio.framework */; };
 		EAFC4AF32390AD3A003CC2AD /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF22390AD3A003CC2AD /* AppDelegate.mm */; };
-		EAFC4AF62390AD3A003CC2AD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF52390AD3A003CC2AD /* SceneDelegate.m */; };
+		EAFC4AF62390AD3A003CC2AD /* SceneDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF52390AD3A003CC2AD /* SceneDelegate.mm */; };
 		EAFC4AF92390AD3A003CC2AD /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4AF82390AD3A003CC2AD /* MainViewController.mm */; };
 		EAFC4AFE2390AD3E003CC2AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAFC4AFD2390AD3E003CC2AD /* Assets.xcassets */; };
 		EAFC4B012390AD3E003CC2AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFC4AFF2390AD3E003CC2AD /* LaunchScreen.storyboard */; };
@@ -48,7 +48,7 @@
 		05FAB0AF23925F61005EDE16 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
 		05FAB0B02392641E005EDE16 /* Services.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Services.plist; path = Services/Services.plist; sourceTree = "<group>"; };
 		05FAB0B223926A45005EDE16 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		05FAB0B323926A45005EDE16 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		05FAB0B323926A45005EDE16 /* BaseViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BaseViewController.mm; sourceTree = "<group>"; };
 		20C031C7CE5BC5D1272BB75A /* Pods_Pistacchio_PistacchioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pistacchio_PistacchioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5093F19AF7FBAA62B4C90A2C /* Pods-PistacchioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PistacchioTests.release.xcconfig"; path = "Target Support Files/Pods-PistacchioTests/Pods-PistacchioTests.release.xcconfig"; sourceTree = "<group>"; };
 		6E75B5EAA24A0CAA66433F41 /* Pods-PistacchioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PistacchioTests.debug.xcconfig"; path = "Target Support Files/Pods-PistacchioTests/Pods-PistacchioTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		EAFC4AF12390AD3A003CC2AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EAFC4AF22390AD3A003CC2AD /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		EAFC4AF42390AD3A003CC2AD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		EAFC4AF52390AD3A003CC2AD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		EAFC4AF52390AD3A003CC2AD /* SceneDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneDelegate.mm; sourceTree = "<group>"; };
 		EAFC4AF72390AD3A003CC2AD /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		EAFC4AF82390AD3A003CC2AD /* MainViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
 		EAFC4AFD2390AD3E003CC2AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,11 +119,11 @@
 			isa = PBXGroup;
 			children = (
 				05FAB0B223926A45005EDE16 /* BaseViewController.h */,
-				05FAB0B323926A45005EDE16 /* BaseViewController.m */,
+				05FAB0B323926A45005EDE16 /* BaseViewController.mm */,
 				EAFC4AF12390AD3A003CC2AD /* AppDelegate.h */,
 				EAFC4AF22390AD3A003CC2AD /* AppDelegate.mm */,
 				EAFC4AF42390AD3A003CC2AD /* SceneDelegate.h */,
-				EAFC4AF52390AD3A003CC2AD /* SceneDelegate.m */,
+				EAFC4AF52390AD3A003CC2AD /* SceneDelegate.mm */,
 				EAFC4AFD2390AD3E003CC2AD /* Assets.xcassets */,
 				EAFC4B032390AD3E003CC2AD /* main.m */,
 				05FAB0AF23925F61005EDE16 /* macros.h */,
@@ -465,12 +465,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAFC4AF92390AD3A003CC2AD /* MainViewController.mm in Sources */,
-				05FAB0B423926A45005EDE16 /* BaseViewController.m in Sources */,
+				05FAB0B423926A45005EDE16 /* BaseViewController.mm in Sources */,
 				EAFC4AF32390AD3A003CC2AD /* AppDelegate.mm in Sources */,
 				EAFC4B042390AD3E003CC2AD /* main.m in Sources */,
 				050D2EDE239383BB00CC296E /* News.cpp in Sources */,
 				05FAB0AD23925339005EDE16 /* NetworkServices.mm in Sources */,
-				EAFC4AF62390AD3A003CC2AD /* SceneDelegate.m in Sources */,
+				EAFC4AF62390AD3A003CC2AD /* SceneDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

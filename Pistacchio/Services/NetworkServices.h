@@ -16,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)serviceStart;
 @end
 
-@interface NetworkServices: NSObject <NetworkServicesDelegate>
+@interface NetworkServices:NSObject <NetworkServicesDelegate>
 - (void)setDelegate:(id)delegate;
-- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getNews;
+- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getNewsTopic;
 @end
 
 NS_ASSUME_NONNULL_END
