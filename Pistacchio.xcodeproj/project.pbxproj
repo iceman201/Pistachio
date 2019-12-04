@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		050D2EDE239383BB00CC296E /* News.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EDD239383BB00CC296E /* News.cpp */; };
+		050D2EE62397C82A00CC296E /* NewsCollectionViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EE52397C82A00CC296E /* NewsCollectionViewDelegate.mm */; };
+		050D2EEB2397D6A800CC296E /* SharedIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EEA2397D6A800CC296E /* SharedIdentifiers.m */; };
 		05FAB0AD23925339005EDE16 /* NetworkServices.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0AC23925339005EDE16 /* NetworkServices.mm */; };
 		05FAB0B12392641E005EDE16 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FAB0B02392641E005EDE16 /* Services.plist */; };
 		05FAB0B423926A45005EDE16 /* BaseViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0B323926A45005EDE16 /* BaseViewController.mm */; };
@@ -43,6 +45,12 @@
 
 /* Begin PBXFileReference section */
 		050D2EDD239383BB00CC296E /* News.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = News.cpp; sourceTree = "<group>"; };
+		050D2EE02397C2CB00CC296E /* Pistacchio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pistacchio.entitlements; sourceTree = "<group>"; };
+		050D2EE12397C7B200CC296E /* Pistacchio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pistacchio-Bridging-Header.h"; sourceTree = "<group>"; };
+		050D2EE42397C82A00CC296E /* NewsCollectionViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCollectionViewDelegate.h; sourceTree = "<group>"; };
+		050D2EE52397C82A00CC296E /* NewsCollectionViewDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NewsCollectionViewDelegate.mm; sourceTree = "<group>"; };
+		050D2EE92397D6A800CC296E /* SharedIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedIdentifiers.h; sourceTree = "<group>"; };
+		050D2EEA2397D6A800CC296E /* SharedIdentifiers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedIdentifiers.m; sourceTree = "<group>"; };
 		05FAB0AB23925339005EDE16 /* NetworkServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkServices.h; path = Pistacchio/Services/NetworkServices.h; sourceTree = SOURCE_ROOT; };
 		05FAB0AC23925339005EDE16 /* NetworkServices.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = NetworkServices.mm; path = Pistacchio/Services/NetworkServices.mm; sourceTree = SOURCE_ROOT; };
 		05FAB0AF23925F61005EDE16 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
@@ -106,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050D2EDF2397C12B00CC296E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				050D2EE42397C82A00CC296E /* NewsCollectionViewDelegate.h */,
+				050D2EE52397C82A00CC296E /* NewsCollectionViewDelegate.mm */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		05FAB0AE23925344005EDE16 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +137,8 @@
 			children = (
 				05FAB0B223926A45005EDE16 /* BaseViewController.h */,
 				05FAB0B323926A45005EDE16 /* BaseViewController.mm */,
+				050D2EE92397D6A800CC296E /* SharedIdentifiers.h */,
+				050D2EEA2397D6A800CC296E /* SharedIdentifiers.m */,
 				EAFC4AF12390AD3A003CC2AD /* AppDelegate.h */,
 				EAFC4AF22390AD3A003CC2AD /* AppDelegate.mm */,
 				EAFC4AF42390AD3A003CC2AD /* SceneDelegate.h */,
@@ -127,6 +146,7 @@
 				EAFC4AFD2390AD3E003CC2AD /* Assets.xcassets */,
 				EAFC4B032390AD3E003CC2AD /* main.m */,
 				05FAB0AF23925F61005EDE16 /* macros.h */,
+				050D2EE12397C7B200CC296E /* Pistacchio-Bridging-Header.h */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -187,8 +207,10 @@
 		EAFC4AF02390AD3A003CC2AD /* Pistacchio */ = {
 			isa = PBXGroup;
 			children = (
+				050D2EE02397C2CB00CC296E /* Pistacchio.entitlements */,
 				EAFC4B262390AD51003CC2AD /* Model */,
 				05FAB0AE23925344005EDE16 /* Services */,
+				050D2EDF2397C12B00CC296E /* Delegates */,
 				EAFC4AF72390AD3A003CC2AD /* MainViewController.h */,
 				EAFC4AF82390AD3A003CC2AD /* MainViewController.mm */,
 				05FAB0B623926ADA005EDE16 /* Storyboards */,
@@ -298,6 +320,7 @@
 				TargetAttributes = {
 					EAFC4AED2390AD3A003CC2AD = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 					EAFC4B082390AD3E003CC2AD = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -467,9 +490,11 @@
 				EAFC4AF92390AD3A003CC2AD /* MainViewController.mm in Sources */,
 				05FAB0B423926A45005EDE16 /* BaseViewController.mm in Sources */,
 				EAFC4AF32390AD3A003CC2AD /* AppDelegate.mm in Sources */,
+				050D2EEB2397D6A800CC296E /* SharedIdentifiers.m in Sources */,
 				EAFC4B042390AD3E003CC2AD /* main.m in Sources */,
 				050D2EDE239383BB00CC296E /* News.cpp in Sources */,
 				05FAB0AD23925339005EDE16 /* NetworkServices.mm in Sources */,
+				050D2EE62397C82A00CC296E /* NewsCollectionViewDelegate.mm in Sources */,
 				EAFC4AF62390AD3A003CC2AD /* SceneDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,7 +658,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Pistacchio/Pistacchio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 8436A3G9R2;
 				INFOPLIST_FILE = Pistacchio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -642,6 +670,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liguo.jiao.Pistacchio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Pistacchio/SupportFiles/Pistacchio-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -652,7 +684,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Pistacchio/Pistacchio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 8436A3G9R2;
 				INFOPLIST_FILE = Pistacchio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -661,6 +696,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liguo.jiao.Pistacchio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Pistacchio/SupportFiles/Pistacchio-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
