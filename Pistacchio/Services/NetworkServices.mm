@@ -42,7 +42,6 @@
     NSString *address = [service valueForKey:@"ArticleSearch"];
     NSString *topic = @"finance&page";
     NSString *token = @"DzA9CAMEDhbyT6AYhW0CzdftgT623Fni";
-    //https://api.nytimes.com/svc/search/v2/articlesearch.json ?page=50&q=finance&sort=relevance&api-key=
     NSString *apiUrl = [NSString stringWithFormat:@"%@?page=50&q=%@&sort=relevance&api-key=%@", address, topic, token];
     return apiUrl;
 }

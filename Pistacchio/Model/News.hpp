@@ -14,49 +14,86 @@
 #include <regex>
 #include <stdio.h>
 
-namespace nlohmann {
+namespace nlohmann
+{
     template <typename T>
-    struct adl_serializer<std::shared_ptr<T>> {
-        static void to_json(json & j, const std::shared_ptr<T> & opt) {
-            if (!opt) j = nullptr; else j = *opt;
+    struct adl_serializer<std::shared_ptr<T>>
+    {
+        static void to_json(json & j, const std::shared_ptr<T> & opt)
+        {
+            if (!opt)
+            {
+                j = nullptr;
+            }
+            else
+            {
+                j = *opt;
+            }
         }
 
-        static std::shared_ptr<T> from_json(const json & j) {
-            if (j.is_null()) return std::unique_ptr<T>(); else return std::unique_ptr<T>(new T(j.get<T>()));
+        static std::shared_ptr<T> from_json(const json & j)
+        {
+            if (j.is_null())
+            {
+                return std::unique_ptr<T>();
+            }
+            else
+            {
+                return std::unique_ptr<T>(new T(j.get<T>()));
+            }
         }
     };
 }
 
-namespace news_by_topic {
+namespace news_by_topic
+{
     using nlohmann::json;
 
-    inline json get_untyped(const json & j, const char * property) {
-        if (j.find(property) != j.end()) {
+    enum class Source : int
+    {
+        REUTERS,
+        THE_NEW_YORK_TIMES,
+        AP,
+        IHT,
+        OTHER
+    };
+    enum class DocumentType : int
+    {
+        ARTICLE
+    };
+
+    inline json get_untyped(const json & j, const char * property)
+    {
+        if (j.find(property) != j.end())
+        {
             return j.at(property).get<json>();
         }
         return json();
     }
 
-    inline json get_untyped(const json & j, std::string property) {
+    inline json get_untyped(const json & j, std::string property)
+    {
         return get_untyped(j, property.data());
     }
 
     template <typename T>
-    inline std::shared_ptr<T> get_optional(const json & j, const char * property) {
-        if (j.find(property) != j.end()) {
+    inline std::shared_ptr<T> get_optional(const json & j, const char * property)
+    {
+        if (j.find(property) != j.end())
+        {
             return j.at(property).get<std::shared_ptr<T>>();
         }
         return std::shared_ptr<T>();
     }
 
     template <typename T>
-    inline std::shared_ptr<T> get_optional(const json & j, std::string property) {
+    inline std::shared_ptr<T> get_optional(const json & j, std::string property)
+    {
         return get_optional<T>(j, property.data());
     }
 
-    enum class Source : int { REUTERS, THE_NEW_YORK_TIMES, AP, IHT, OTHER };
-
-    class Person {
+    class Person
+    {
         public:
         Person() = default;
         virtual ~Person() = default;
@@ -72,34 +109,88 @@ namespace news_by_topic {
         std::shared_ptr<int64_t> rank;
 
         public:
-        std::shared_ptr<std::string> get_firstname() const { return firstname; }
-        void set_firstname(std::shared_ptr<std::string> value) { this->firstname = value; }
+        std::shared_ptr<std::string> get_firstname() const
+        {
+            return firstname;
+        }
+        void set_firstname(std::shared_ptr<std::string> value) {
+            this->firstname = value;
+        }
 
-        std::shared_ptr<std::string> get_middlename() const { return middlename; }
-        void set_middlename(std::shared_ptr<std::string> value) { this->middlename = value; }
+        std::shared_ptr<std::string> get_middlename() const
+        {
+            return middlename;
+        }
+        void set_middlename(std::shared_ptr<std::string> value)
+        {
+            this->middlename = value;
+        }
 
-        std::shared_ptr<std::string> get_lastname() const { return lastname; }
-        void set_lastname(std::shared_ptr<std::string> value) { this->lastname = value; }
+        std::shared_ptr<std::string> get_lastname() const
+        {
+            return lastname;
+        }
+        void set_lastname(std::shared_ptr<std::string> value)
+        {
+            this->lastname = value;
+        }
 
-        const nlohmann::json & get_qualifier() const { return qualifier; }
-        nlohmann::json & get_mutable_qualifier() { return qualifier; }
-        void set_qualifier(const nlohmann::json & value) { this->qualifier = value; }
+        const nlohmann::json & get_qualifier() const
+        {
+            return qualifier;
+        }
+        nlohmann::json & get_mutable_qualifier()
+        {
+            return qualifier;
+        }
+        void set_qualifier(const nlohmann::json & value)
+        {
+            this->qualifier = value;
+        }
 
-        const nlohmann::json & get_title() const { return title; }
-        nlohmann::json & get_mutable_title() { return title; }
-        void set_title(const nlohmann::json & value) { this->title = value; }
+        const nlohmann::json & get_title() const
+        {
+            return title;
+        }
+        nlohmann::json & get_mutable_title()
+        {
+            return title;
+        }
+        void set_title(const nlohmann::json & value)
+        {
+            this->title = value;
+        }
 
-        std::shared_ptr<std::string> get_role() const { return role; }
-        void set_role(std::shared_ptr<std::string> value) { this->role = value; }
+        std::shared_ptr<std::string> get_role() const
+        {
+            return role;
+        }
+        void set_role(std::shared_ptr<std::string> value)
+        {
+            this->role = value;
+        }
 
-        std::shared_ptr<std::string> get_organization() const { return organization; }
-        void set_organization(std::shared_ptr<std::string> value) { this->organization = value; }
+        std::shared_ptr<std::string> get_organization() const
+        {
+            return organization;
+        }
+        void set_organization(std::shared_ptr<std::string> value)
+        {
+            this->organization = value;
+        }
 
-        std::shared_ptr<int64_t> get_rank() const { return rank; }
-        void set_rank(std::shared_ptr<int64_t> value) { this->rank = value; }
+        std::shared_ptr<int64_t> get_rank() const
+        {
+            return rank;
+        }
+        void set_rank(std::shared_ptr<int64_t> value)
+        {
+            this->rank = value;
+        }
     };
 
-    class Byline {
+    class Byline
+    {
         public:
         Byline() = default;
         virtual ~Byline() = default;
@@ -110,17 +201,33 @@ namespace news_by_topic {
         std::shared_ptr<Source> organization;
 
         public:
-        std::shared_ptr<std::string> get_original() const { return original; }
-        void set_original(std::shared_ptr<std::string> value) { this->original = value; } 
+        std::shared_ptr<std::string> get_original() const
+        {
+            return original;
+        }
+        void set_original(std::shared_ptr<std::string> value)
+        {
+            this->original = value;
+        }
 
-        std::shared_ptr<std::vector<Person>> get_person() const { return person; }
-        void set_person(std::shared_ptr<std::vector<Person>> value) { this->person = value; }
+        std::shared_ptr<std::vector<Person>> get_person() const
+        {
+            return person;
+        }
+        void set_person(std::shared_ptr<std::vector<Person>> value)
+        {
+            this->person = value;
+        }
 
-        std::shared_ptr<Source> get_organization() const { return organization; }
-        void set_organization(std::shared_ptr<Source> value) { this->organization = value; }
+        std::shared_ptr<Source> get_organization() const
+        {
+            return organization;
+        }
+        void set_organization(std::shared_ptr<Source> value)
+        {
+            this->organization = value;
+        }
     };
-
-    enum class DocumentType : int { ARTICLE };
 
     class Headline {
         public:
@@ -137,37 +244,102 @@ namespace news_by_topic {
         nlohmann::json sub;
 
         public:
-        std::shared_ptr<std::string> get_main() const { return main; }
-        void set_main(std::shared_ptr<std::string> value) { this->main = value; }
+        std::shared_ptr<std::string> get_main() const
+        {
+            return main;
+        }
+        void set_main(std::shared_ptr<std::string> value)
+        {
+            this->main = value;
+        }
 
-        std::shared_ptr<std::string> get_kicker() const { return kicker; }
-        void set_kicker(std::shared_ptr<std::string> value) { this->kicker = value; }
+        std::shared_ptr<std::string> get_kicker() const
+        {
+            return kicker;
+        }
+        void set_kicker(std::shared_ptr<std::string> value)
+        {
+            this->kicker = value;
+        }
 
-        const nlohmann::json & get_content_kicker() const { return content_kicker; }
-        nlohmann::json & get_mutable_content_kicker() { return content_kicker; }
-        void set_content_kicker(const nlohmann::json & value) { this->content_kicker = value; }
+        const nlohmann::json & get_content_kicker() const
+        {
+            return content_kicker;
+        }
+        nlohmann::json & get_mutable_content_kicker()
+        {
+            return content_kicker;
+        }
+        void set_content_kicker(const nlohmann::json & value)
+        {
+            this->content_kicker = value;
+        }
 
-        std::shared_ptr<std::string> get_print_headline() const { return print_headline; }
-        void set_print_headline(std::shared_ptr<std::string> value) { this->print_headline = value; }
+        std::shared_ptr<std::string> get_print_headline() const
+        {
+            return print_headline;
+        }
+        void set_print_headline(std::shared_ptr<std::string> value)
+        {
+            this->print_headline = value;
+        }
 
-        const nlohmann::json & get_name() const { return name; }
-        nlohmann::json & get_mutable_name() { return name; }
-        void set_name(const nlohmann::json & value) { this->name = value; }
+        const nlohmann::json & get_name() const
+        {
+            return name;
+        }
+        nlohmann::json & get_mutable_name()
+        {
+            return name;
+        }
+        void set_name(const nlohmann::json & value)
+        {
+            this->name = value;
+        }
 
-        const nlohmann::json & get_seo() const { return seo; }
-        nlohmann::json & get_mutable_seo() { return seo; }
-        void set_seo(const nlohmann::json & value) { this->seo = value; }
+        const nlohmann::json & get_seo() const
+        {
+            return seo;
+        }
+        nlohmann::json & get_mutable_seo()
+        {
+            return seo;
+        }
+        void set_seo(const nlohmann::json & value)
+        {
+            this->seo = value;
+        }
 
-        const nlohmann::json & get_sub() const { return sub; }
-        nlohmann::json & get_mutable_sub() { return sub; }
-        void set_sub(const nlohmann::json & value) { this->sub = value; }
+        const nlohmann::json & get_sub() const
+        {
+            return sub;
+        }
+
+        nlohmann::json & get_mutable_sub()
+        {
+            return sub;
+        }
+        void set_sub(const nlohmann::json & value)
+        {
+            this->sub = value;
+        }
     };
 
-    enum class Major : int { N };
+    enum class Major : int
+    {
+        N
+    };
 
-    enum class Name : int { GLOCATIONS, ORGANIZATIONS, PERSONS, SUBJECT };
+    enum class Name : int
+    {
+        GLOCATIONS,
+        ORGANIZATIONS,
+        PERSONS,
+        SUBJECT
+    };
 
-    class Keyword {
+    class Keyword
+    {
         public:
         Keyword() = default;
         virtual ~Keyword() = default;
@@ -179,20 +351,45 @@ namespace news_by_topic {
         std::shared_ptr<Major> major;
 
         public:
-        std::shared_ptr<Name> get_name() const { return name; }
-        void set_name(std::shared_ptr<Name> value) { this->name = value; }
+        std::shared_ptr<Name> get_name() const
+        {
+            return name;
+        }
+        void set_name(std::shared_ptr<Name> value)
+        {
+            this->name = value;
+        }
 
-        std::shared_ptr<std::string> get_value() const { return value; }
-        void set_value(std::shared_ptr<std::string> value) { this->value = value; }
+        std::shared_ptr<std::string> get_value() const
+        {
+            return value;
+        }
+        void set_value(std::shared_ptr<std::string> value)
+        {
+            this->value = value;
+        }
 
-        std::shared_ptr<int64_t> get_rank() const { return rank; }
-        void set_rank(std::shared_ptr<int64_t> value) { this->rank = value; }
+        std::shared_ptr<int64_t> get_rank() const
+        {
+            return rank;
+        }
+        void set_rank(std::shared_ptr<int64_t> value)
+        {
+            this->rank = value;
+        }
 
-        std::shared_ptr<Major> get_major() const { return major; }
-        void set_major(std::shared_ptr<Major> value) { this->major = value; }
+        std::shared_ptr<Major> get_major() const
+        {
+            return major;
+        }
+        void set_major(std::shared_ptr<Major> value)
+        {
+            this->major = value;
+        }
     };
 
-    class Legacy {
+    class Legacy
+    {
         public:
         Legacy() = default;
         virtual ~Legacy() = default;

@@ -9,8 +9,10 @@
 #include "News.hpp"
 #include <stdio.h>
 
-namespace nlohmann {
-    void from_json(const json & j, news_by_topic::Person& x) {
+namespace nlohmann
+{
+    void from_json(const json & j, news_by_topic::Person& x)
+    {
         x.set_firstname(news_by_topic::get_optional<std::string>(j, "firstname"));
         x.set_middlename(news_by_topic::get_optional<std::string>(j, "middlename"));
         x.set_lastname(news_by_topic::get_optional<std::string>(j, "lastname"));
@@ -21,7 +23,8 @@ namespace nlohmann {
         x.set_rank(news_by_topic::get_optional<int64_t>(j, "rank"));
     }
 
-    void to_json(json & j, const news_by_topic::Person & x) {
+    void to_json(json & j, const news_by_topic::Person & x)
+    {
         j = json::object();
         j["firstname"] = x.get_firstname();
         j["middlename"] = x.get_middlename();
@@ -33,20 +36,23 @@ namespace nlohmann {
         j["rank"] = x.get_rank();
     }
 
-    void from_json(const json & j, news_by_topic::Byline& x) {
+    void from_json(const json & j, news_by_topic::Byline& x)
+    {
         x.set_original(news_by_topic::get_optional<std::string>(j, "original"));
         x.set_person(news_by_topic::get_optional<std::vector<news_by_topic::Person>>(j, "person"));
         x.set_organization(news_by_topic::get_optional<news_by_topic::Source>(j, "organization"));
     }
 
-    void to_json(json & j, const news_by_topic::Byline & x) {
+    void to_json(json & j, const news_by_topic::Byline & x)
+    {
         j = json::object();
         j["original"] = x.get_original();
         j["person"] = x.get_person();
         j["organization"] = x.get_organization();
     }
 
-    void from_json(const json & j, news_by_topic::Headline& x) {
+    void from_json(const json & j, news_by_topic::Headline& x)
+    {
         x.set_main(news_by_topic::get_optional<std::string>(j, "main"));
         x.set_kicker(news_by_topic::get_optional<std::string>(j, "kicker"));
         x.set_content_kicker(news_by_topic::get_untyped(j, "content_kicker"));
@@ -56,7 +62,8 @@ namespace nlohmann {
         x.set_sub(news_by_topic::get_untyped(j, "sub"));
     }
 
-    void to_json(json & j, const news_by_topic::Headline & x) {
+    void to_json(json & j, const news_by_topic::Headline & x)
+    {
         j = json::object();
         j["main"] = x.get_main();
         j["kicker"] = x.get_kicker();
@@ -67,14 +74,16 @@ namespace nlohmann {
         j["sub"] = x.get_sub();
     }
 
-    void from_json(const json & j, news_by_topic::Keyword& x) {
+    void from_json(const json & j, news_by_topic::Keyword& x)
+    {
         x.set_name(news_by_topic::get_optional<news_by_topic::Name>(j, "name"));
         x.set_value(news_by_topic::get_optional<std::string>(j, "value"));
         x.set_rank(news_by_topic::get_optional<int64_t>(j, "rank"));
         x.set_major(news_by_topic::get_optional<news_by_topic::Major>(j, "major"));
     }
 
-    void to_json(json & j, const news_by_topic::Keyword & x) {
+    void to_json(json & j, const news_by_topic::Keyword & x)
+    {
         j = json::object();
         j["name"] = x.get_name();
         j["value"] = x.get_value();
@@ -82,7 +91,8 @@ namespace nlohmann {
         j["major"] = x.get_major();
     }
 
-    void from_json(const json & j, news_by_topic::Legacy& x) {
+    void from_json(const json & j, news_by_topic::Legacy& x)
+    {
         x.set_xlarge(news_by_topic::get_optional<std::string>(j, "xlarge"));
         x.set_xlargewidth(news_by_topic::get_optional<int64_t>(j, "xlargewidth"));
         x.set_xlargeheight(news_by_topic::get_optional<int64_t>(j, "xlargeheight"));
@@ -94,7 +104,8 @@ namespace nlohmann {
         x.set_wide(news_by_topic::get_optional<std::string>(j, "wide"));
     }
 
-    void to_json(json & j, const news_by_topic::Legacy & x) {
+    void to_json(json & j, const news_by_topic::Legacy & x)
+    {
         j = json::object();
         j["xlarge"] = x.get_xlarge();
         j["xlargewidth"] = x.get_xlargewidth();
@@ -107,7 +118,8 @@ namespace nlohmann {
         j["wide"] = x.get_wide();
     }
 
-    void from_json(const json & j, news_by_topic::Multimedia& x) {
+    void from_json(const json & j, news_by_topic::Multimedia& x)
+    {
         x.set_rank(news_by_topic::get_optional<int64_t>(j, "rank"));
         x.set_subtype(news_by_topic::get_optional<std::string>(j, "subtype"));
         x.set_caption(news_by_topic::get_untyped(j, "caption"));
@@ -121,7 +133,8 @@ namespace nlohmann {
         x.set_crop_name(news_by_topic::get_optional<std::string>(j, "crop_name"));
     }
 
-    void to_json(json & j, const news_by_topic::Multimedia & x) {
+    void to_json(json & j, const news_by_topic::Multimedia & x)
+    {
         j = json::object();
         j["rank"] = x.get_rank();
         j["subtype"] = x.get_subtype();
@@ -136,7 +149,8 @@ namespace nlohmann {
         j["crop_name"] = x.get_crop_name();
     }
 
-    void from_json(const json & j, news_by_topic::Doc& x) {
+    void from_json(const json & j, news_by_topic::Doc& x)
+    {
         x.set_abstract(news_by_topic::get_optional<std::string>(j, "abstract"));
         x.set_web_url(news_by_topic::get_optional<std::string>(j, "web_url"));
         x.set_snippet(news_by_topic::get_optional<std::string>(j, "snippet"));
@@ -159,7 +173,8 @@ namespace nlohmann {
         x.set_print_page(news_by_topic::get_optional<std::string>(j, "print_page"));
     }
 
-    void to_json(json & j, const news_by_topic::Doc & x) {
+    void to_json(json & j, const news_by_topic::Doc & x)
+    {
         j = json::object();
         j["abstract"] = x.get_abstract();
         j["web_url"] = x.get_web_url();
@@ -183,131 +198,228 @@ namespace nlohmann {
         j["print_page"] = x.get_print_page();
     }
 
-    void from_json(const json & j, news_by_topic::Meta& x) {
+    void from_json(const json & j, news_by_topic::Meta& x)
+    {
         x.set_hits(news_by_topic::get_optional<int64_t>(j, "hits"));
         x.set_offset(news_by_topic::get_optional<int64_t>(j, "offset"));
         x.set_time(news_by_topic::get_optional<int64_t>(j, "time"));
     }
 
-    void to_json(json & j, const news_by_topic::Meta & x) {
+    void to_json(json & j, const news_by_topic::Meta & x)
+    {
         j = json::object();
         j["hits"] = x.get_hits();
         j["offset"] = x.get_offset();
         j["time"] = x.get_time();
     }
 
-    void from_json(const json & j, news_by_topic::Response& x) {
+    void from_json(const json & j, news_by_topic::Response& x)
+    {
         x.set_docs(news_by_topic::get_optional<std::vector<news_by_topic::Doc>>(j, "docs"));
         x.set_meta(news_by_topic::get_optional<news_by_topic::Meta>(j, "meta"));
     }
 
-    void to_json(json & j, const news_by_topic::Response & x) {
+    void to_json(json & j, const news_by_topic::Response & x)
+    {
         j = json::object();
         j["docs"] = x.get_docs();
         j["meta"] = x.get_meta();
     }
 
-    void from_json(const json & j, news_by_topic::Welcome& x) {
+    void from_json(const json & j, news_by_topic::Welcome& x)
+    {
         x.set_status(news_by_topic::get_optional<std::string>(j, "status"));
         x.set_copyright(news_by_topic::get_optional<std::string>(j, "copyright"));
         x.set_response(news_by_topic::get_optional<news_by_topic::Response>(j, "response"));
     }
 
-    void to_json(json & j, const news_by_topic::Welcome & x) {
+    void to_json(json & j, const news_by_topic::Welcome & x)
+    {
         j = json::object();
         j["status"] = x.get_status();
         j["copyright"] = x.get_copyright();
         j["response"] = x.get_response();
     }
 
-    void from_json(const json & j, news_by_topic::Source & x) {
-        if (j == "Reuters") x = news_by_topic::Source::REUTERS;
-        else if (j == "The New York Times") x = news_by_topic::Source::THE_NEW_YORK_TIMES;
-        else if (j == "The Associated Press" || j == "AP") x = news_by_topic::Source::AP;
-        else if (j == "International Herald Tribune" || j == "IHT") x = news_by_topic::Source::IHT;
-        else {
+    void from_json(const json & j, news_by_topic::Source & x)
+    {
+        if (j == "Reuters")
+        {
+             x = news_by_topic::Source::REUTERS;
+        }
+        else if (j == "The New York Times")
+        {
+            x = news_by_topic::Source::THE_NEW_YORK_TIMES;
+        }
+        else if (j == "The Associated Press" || j == "AP")
+        {
+            x = news_by_topic::Source::AP;
+        }
+        else if (j == "International Herald Tribune" || j == "IHT")
+        {
+            x = news_by_topic::Source::IHT;
+        }
+        else
+        {
             std::cout << "New Source\n" << j << "\n";
             x = news_by_topic::Source::OTHER;
 //            throw "Input JSON does not conform to schema";
         };
     }
 
-    void to_json(json & j, const news_by_topic::Source & x) {
-        switch (x) {
+    void to_json(json & j, const news_by_topic::Source & x)
+    {
+        switch (x)
+        {
             case news_by_topic::Source::REUTERS: j = "Reuters"; break;
             case news_by_topic::Source::THE_NEW_YORK_TIMES: j = "The New York Times"; break;
             default: throw "This should not happen";
         }
     }
 
-    void from_json(const json & j, news_by_topic::DocumentType & x) {
-        if (j == "article") x = news_by_topic::DocumentType::ARTICLE;
+    void from_json(const json & j, news_by_topic::DocumentType & x)
+    {
+        if (j == "article")
+        {
+            x = news_by_topic::DocumentType::ARTICLE;
+        }
         else throw "Input JSON does not conform to schema";
     }
 
-    void to_json(json & j, const news_by_topic::DocumentType & x) {
-        switch (x) {
-            case news_by_topic::DocumentType::ARTICLE: j = "article"; break;
-            default: throw "This should not happen";
+    void to_json(json & j, const news_by_topic::DocumentType & x)
+    {
+        switch (x)
+        {
+            case news_by_topic::DocumentType::ARTICLE:
+                j = "article";
+                break;
+            default:
+                throw "This should not happen";
         }
     }
 
-    void from_json(const json & j, news_by_topic::Major & x) {
-        if (j == "N") x = news_by_topic::Major::N;
-        else throw "Input JSON does not conform to schema";
-    }
-
-    void to_json(json & j, const news_by_topic::Major & x) {
-        switch (x) {
-            case news_by_topic::Major::N: j = "N"; break;
-            default: throw "This should not happen";
+    void from_json(const json & j, news_by_topic::Major & x)
+    {
+        if (j == "N")
+        {
+            x = news_by_topic::Major::N;
+        }
+        else
+        {
+            throw "Input JSON does not conform to schema";
         }
     }
 
-    void from_json(const json & j, news_by_topic::Name & x) {
-        if (j == "glocations") x = news_by_topic::Name::GLOCATIONS;
-        else if (j == "organizations") x = news_by_topic::Name::ORGANIZATIONS;
-        else if (j == "persons") x = news_by_topic::Name::PERSONS;
-        else if (j == "subject") x = news_by_topic::Name::SUBJECT;
-        else throw "Input JSON does not conform to schema";
-    }
-
-    void to_json(json & j, const news_by_topic::Name & x) {
-        switch (x) {
-            case news_by_topic::Name::GLOCATIONS: j = "glocations"; break;
-            case news_by_topic::Name::ORGANIZATIONS: j = "organizations"; break;
-            case news_by_topic::Name::PERSONS: j = "persons"; break;
-            case news_by_topic::Name::SUBJECT: j = "subject"; break;
-            default: throw "This should not happen";
+    void to_json(json & j, const news_by_topic::Major & x)
+    {
+        switch (x)
+        {
+            case news_by_topic::Major::N:
+                j = "N";
+                break;
+            default:
+                throw "This should not happen";
         }
     }
 
-    void from_json(const json & j, news_by_topic::Type & x) {
-        if (j == "image") x = news_by_topic::Type::IMAGE;
-        else throw "Input JSON does not conform to schema";
-    }
-
-    void to_json(json & j, const news_by_topic::Type & x) {
-        switch (x) {
-            case news_by_topic::Type::IMAGE: j = "image"; break;
-            default: throw "This should not happen";
+    void from_json(const json & j, news_by_topic::Name & x)
+    {
+        if (j == "glocations")
+        {
+            x = news_by_topic::Name::GLOCATIONS;
+        }
+        else if (j == "organizations")
+        {
+            x = news_by_topic::Name::ORGANIZATIONS;
+        }
+        else if (j == "persons")
+        {
+            x = news_by_topic::Name::PERSONS;
+        }
+        else if (j == "subject")
+        {
+            x = news_by_topic::Name::SUBJECT;
+        }
+        else
+        {
+            throw "Input JSON does not conform to schema";
         }
     }
 
-    void from_json(const json & j, news_by_topic::TypeOfMaterial & x) {
-        if (j == "briefing") x = news_by_topic::TypeOfMaterial::BRIEFING;
-        else if (j == "News") x = news_by_topic::TypeOfMaterial::NEWS;
-        else{
+    void to_json(json & j, const news_by_topic::Name & x)
+    {
+        switch (x)
+        {
+            case news_by_topic::Name::GLOCATIONS:
+                j = "glocations";
+                break;
+            case news_by_topic::Name::ORGANIZATIONS:
+                j = "organizations";
+                break;
+            case news_by_topic::Name::PERSONS:
+                j = "persons";
+                break;
+            case news_by_topic::Name::SUBJECT:
+                j = "subject";
+                break;
+            default:
+                throw "This should not happen";
+        }
+    }
+
+    void from_json(const json & j, news_by_topic::Type & x)
+    {
+        if (j == "image")
+        {
+            x = news_by_topic::Type::IMAGE;
+        }
+        else
+        {
+            throw "Input JSON does not conform to schema";
+        }
+    }
+
+    void to_json(json & j, const news_by_topic::Type & x)
+    {
+        switch (x)
+        {
+            case news_by_topic::Type::IMAGE:
+                j = "image";
+                break;
+            default:
+                throw "This should not happen";
+        }
+    }
+
+    void from_json(const json & j, news_by_topic::TypeOfMaterial & x)
+    {
+        if (j == "briefing")
+        {
+            x = news_by_topic::TypeOfMaterial::BRIEFING;
+        }
+        else if (j == "News")
+        {
+            x = news_by_topic::TypeOfMaterial::NEWS;
+        }
+        else
+        {
             x = news_by_topic::TypeOfMaterial::OTHER;
             std::cout << j;
         }
     }
 
-    void to_json(json & j, const news_by_topic::TypeOfMaterial & x) {
-        switch (x) {
-            case news_by_topic::TypeOfMaterial::BRIEFING: j = "briefing"; break;
-            case news_by_topic::TypeOfMaterial::NEWS: j = "News"; break;
-            default: throw "This should not happen";
+    void to_json(json & j, const news_by_topic::TypeOfMaterial & x)
+    {
+        switch (x)
+        {
+            case news_by_topic::TypeOfMaterial::BRIEFING:
+                j = "briefing";
+                break;
+            case news_by_topic::TypeOfMaterial::NEWS:
+                j = "News";
+                break;
+            default:
+                throw "This should not happen";
         }
     }
 }
