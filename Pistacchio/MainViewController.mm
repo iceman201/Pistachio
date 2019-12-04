@@ -7,28 +7,43 @@
 //
 
 #import "MainViewController.h"
+#import "NewsCollectionViewDelegate.h"
 
-@interface MainViewController ()
-
+@interface MainViewController()
+@property (nonatomic, strong) NewsCollectionViewDelegate *newsCollectionDelegate;
 @end
 
 @implementation MainViewController
+
+- (void)loadView
+{
+    [super loadView];
+    [self.view setBackgroundColor:[UIColor systemBackgroundColor]];
+
+    UIView *newsContentContainer = [[UIView alloc] initForAutoLayout];
+    newsContentContainer.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:newsContentContainer];
+    [newsContentContainer autoPinEdgesToSuperviewSafeArea];
+    {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+
+        UICollectionView *view = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        NewsCollectionViewDelegate *nDelegate = [[NewsCollectionViewDelegate alloc] initWithTargetView:view];
+        self.newsCollectionDelegate = nDelegate;
+        {
+            [view registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kNewsCellIdentifier];
+            view.backgroundColor = [UIColor cyanColor];
+            [self.view addSubview:view];
+            [view autoPinEdgesToSuperviewSafeArea];
+        }
+    }
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    [self.view setBackgroundColor:[UIColor redColor]];
-
-    UIButton *ha = [[UIButton alloc] initForAutoLayout];
-    [ha addTarget:self action:@selector(tapTest) forControlEvents:UIControlEventTouchUpInside];
-    [ha setBackgroundColor:[UIColor yellowColor]];
-    [self.view addSubview:ha];
-    [ha autoPinEdgeToSuperviewEdge:ALEdgeLeading];
-    [ha autoPinEdgeToSuperviewEdge:ALEdgeTrailing];
-    [ha autoPinEdgeToSuperviewSafeArea:ALEdgeTop];
-    [ha autoPinEdgeToSuperviewSafeArea:ALEdgeBottom];
-//    self.services 
 }
 
 - (void)tapTest
