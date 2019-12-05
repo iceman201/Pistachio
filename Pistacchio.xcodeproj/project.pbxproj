@@ -11,7 +11,6 @@
 		050D2EE62397C82A00CC296E /* NewsCollectionViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EE52397C82A00CC296E /* NewsCollectionViewDelegate.mm */; };
 		050D2EEB2397D6A800CC296E /* SharedConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EEA2397D6A800CC296E /* SharedConstants.m */; };
 		05FAB0AD23925339005EDE16 /* NetworkServices.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0AC23925339005EDE16 /* NetworkServices.mm */; };
-		05FAB0B12392641E005EDE16 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FAB0B02392641E005EDE16 /* Services.plist */; };
 		05FAB0B423926A45005EDE16 /* BaseViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0B323926A45005EDE16 /* BaseViewController.mm */; };
 		42070A5C9A680EB818CC7595 /* Pods_Pistacchio_PistacchioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C031C7CE5BC5D1272BB75A /* Pods_Pistacchio_PistacchioUITests.framework */; };
 		BAE9296A8286DB6F0478B12A /* Pods_PistacchioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79A522D32966855767709BD /* Pods_PistacchioTests.framework */; };
@@ -24,6 +23,8 @@
 		EAFC4B042390AD3E003CC2AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4B032390AD3E003CC2AD /* main.m */; };
 		EAFC4B0E2390AD3E003CC2AD /* PistacchioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4B0D2390AD3E003CC2AD /* PistacchioTests.m */; };
 		EAFC4B192390AD3E003CC2AD /* PistacchioUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFC4B182390AD3E003CC2AD /* PistacchioUITests.m */; };
+		EAFDA44E2398A89300BE73F4 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAFDA44D2398A89300BE73F4 /* Services.plist */; };
+		EAFDA4532398ADA600BE73F4 /* NewsCViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFDA4522398ADA600BE73F4 /* NewsCViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,6 @@
 		05FAB0AB23925339005EDE16 /* NetworkServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkServices.h; path = Pistacchio/Services/NetworkServices.h; sourceTree = SOURCE_ROOT; };
 		05FAB0AC23925339005EDE16 /* NetworkServices.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = NetworkServices.mm; path = Pistacchio/Services/NetworkServices.mm; sourceTree = SOURCE_ROOT; };
 		05FAB0AF23925F61005EDE16 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
-		05FAB0B02392641E005EDE16 /* Services.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Services.plist; path = Services/Services.plist; sourceTree = "<group>"; };
 		05FAB0B223926A45005EDE16 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		05FAB0B323926A45005EDE16 /* BaseViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BaseViewController.mm; sourceTree = "<group>"; };
 		20C031C7CE5BC5D1272BB75A /* Pods_Pistacchio_PistacchioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pistacchio_PistacchioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +84,8 @@
 		EAFC4B182390AD3E003CC2AD /* PistacchioUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PistacchioUITests.m; sourceTree = "<group>"; };
 		EAFC4B1A2390AD3E003CC2AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAFC4B282390B024003CC2AD /* News.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = News.hpp; sourceTree = "<group>"; };
+		EAFDA44D2398A89300BE73F4 /* Services.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Services.plist; path = SupportFiles/Services.plist; sourceTree = "<group>"; };
+		EAFDA4522398ADA600BE73F4 /* NewsCViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,13 +212,14 @@
 				050D2EE02397C2CB00CC296E /* Pistacchio.entitlements */,
 				EAFC4B262390AD51003CC2AD /* Model */,
 				05FAB0AE23925344005EDE16 /* Services */,
+				EAFDA44F2398ACE000BE73F4 /* Views */,
 				050D2EDF2397C12B00CC296E /* Delegates */,
 				EAFC4AF72390AD3A003CC2AD /* MainViewController.h */,
 				EAFC4AF82390AD3A003CC2AD /* MainViewController.mm */,
 				05FAB0B623926ADA005EDE16 /* Storyboards */,
 				05FAB0B523926A81005EDE16 /* SupportFiles */,
 				EAFC4B022390AD3E003CC2AD /* Info.plist */,
-				05FAB0B02392641E005EDE16 /* Services.plist */,
+				EAFDA44D2398A89300BE73F4 /* Services.plist */,
 			);
 			path = Pistacchio;
 			sourceTree = "<group>";
@@ -246,6 +249,14 @@
 				050D2EDD239383BB00CC296E /* News.cpp */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EAFDA44F2398ACE000BE73F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAFDA4522398ADA600BE73F4 /* NewsCViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,7 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05FAB0B12392641E005EDE16 /* Services.plist in Resources */,
+				EAFDA44E2398A89300BE73F4 /* Services.plist in Resources */,
 				EAFC4B012390AD3E003CC2AD /* LaunchScreen.storyboard in Resources */,
 				EAFC4AFE2390AD3E003CC2AD /* Assets.xcassets in Resources */,
 			);
@@ -490,6 +501,7 @@
 				EAFC4AF92390AD3A003CC2AD /* MainViewController.mm in Sources */,
 				05FAB0B423926A45005EDE16 /* BaseViewController.mm in Sources */,
 				EAFC4AF32390AD3A003CC2AD /* AppDelegate.mm in Sources */,
+				EAFDA4532398ADA600BE73F4 /* NewsCViewCell.swift in Sources */,
 				050D2EEB2397D6A800CC296E /* SharedConstants.m in Sources */,
 				EAFC4B042390AD3E003CC2AD /* main.m in Sources */,
 				050D2EDE239383BB00CC296E /* News.cpp in Sources */,
@@ -707,6 +719,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E75B5EAA24A0CAA66433F41 /* Pods-PistacchioTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8436A3G9R2;
@@ -728,6 +741,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5093F19AF7FBAA62B4C90A2C /* Pods-PistacchioTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8436A3G9R2;
@@ -749,6 +763,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D83FB26F1C44424B60185CC1 /* Pods-Pistacchio-PistacchioUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8436A3G9R2;
 				INFOPLIST_FILE = PistacchioUITests/Info.plist;
@@ -768,6 +783,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9C82F75E14776D4838D08C0C /* Pods-Pistacchio-PistacchioUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8436A3G9R2;
 				INFOPLIST_FILE = PistacchioUITests/Info.plist;

@@ -11,13 +11,16 @@
 #import "macros.h"
 #include "NetworkServices.h"
 #import "SharedConstants.h"
+#import "Pistacchio-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
 @property (nonatomic, strong) NetworkServices *services;
+@property (nonatomic, strong) UIView *topBar;
 
 - (instancetype)initWithNetworkServices:(NetworkServices *)services;
+- (void)shouldShowTopBar:(BOOL)show;
 @end
 
 NS_ASSUME_NONNULL_END
