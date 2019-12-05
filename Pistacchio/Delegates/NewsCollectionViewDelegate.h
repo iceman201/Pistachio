@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NewsCollectionViewDelegate : NSObject <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface NewsCollectionViewDelegate : NSObject <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 - (instancetype)initWithTargetView:(UICollectionView *)view;
 @end
 

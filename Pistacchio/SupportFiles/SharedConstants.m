@@ -9,3 +9,4 @@
 #import "SharedConstants.h"
 
 NSString *const NEWS_COLLECTION_CELL_ID = @"0000010401802e";
+CGFloat DEFAULT_PADDING = 8;
