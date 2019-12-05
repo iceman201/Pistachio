@@ -113,7 +113,8 @@ namespace news_by_topic
         {
             return firstname;
         }
-        void set_firstname(std::shared_ptr<std::string> value) {
+        void set_firstname(std::shared_ptr<std::string> value)
+        {
             this->firstname = value;
         }
 
@@ -406,37 +407,95 @@ namespace news_by_topic
         std::shared_ptr<std::string> wide;
 
         public:
-        std::shared_ptr<std::string> get_xlarge() const { return xlarge; }
-        void set_xlarge(std::shared_ptr<std::string> value) { this->xlarge = value; }
+        std::shared_ptr<std::string> get_xlarge() const
+        {
+            return xlarge;
+        }
+        void set_xlarge(std::shared_ptr<std::string> value)
+        {
+            this->xlarge = value;
+        }
 
-        std::shared_ptr<int64_t> get_xlargewidth() const { return xlargewidth; }
-        void set_xlargewidth(std::shared_ptr<int64_t> value) { this->xlargewidth = value; }
+        std::shared_ptr<int64_t> get_xlargewidth() const
+        {
+            return xlargewidth;
+        }
+        void set_xlargewidth(std::shared_ptr<int64_t> value)
+        {
+            this->xlargewidth = value;
+        }
 
-        std::shared_ptr<int64_t> get_xlargeheight() const { return xlargeheight; }
-        void set_xlargeheight(std::shared_ptr<int64_t> value) { this->xlargeheight = value; }
+        std::shared_ptr<int64_t> get_xlargeheight() const
+        {
+            return xlargeheight;
+        }
+        void set_xlargeheight(std::shared_ptr<int64_t> value)
+        {
+            this->xlargeheight = value;
+        }
 
-        std::shared_ptr<std::string> get_thumbnail() const { return thumbnail; }
-        void set_thumbnail(std::shared_ptr<std::string> value) { this->thumbnail = value; }
+        std::shared_ptr<std::string> get_thumbnail() const
+        {
+            return thumbnail;
+        }
+        void set_thumbnail(std::shared_ptr<std::string> value)
+        {
+            this->thumbnail = value;
+        }
 
-        std::shared_ptr<int64_t> get_thumbnailwidth() const { return thumbnailwidth; }
-        void set_thumbnailwidth(std::shared_ptr<int64_t> value) { this->thumbnailwidth = value; }
+        std::shared_ptr<int64_t> get_thumbnailwidth() const
+        {
+            return thumbnailwidth;
+        }
+        void set_thumbnailwidth(std::shared_ptr<int64_t> value)
+        {
+            this->thumbnailwidth = value;
+        }
 
-        std::shared_ptr<int64_t> get_thumbnailheight() const { return thumbnailheight; }
-        void set_thumbnailheight(std::shared_ptr<int64_t> value) { this->thumbnailheight = value; }
+        std::shared_ptr<int64_t> get_thumbnailheight() const
+        {
+            return thumbnailheight;
+        }
+        void set_thumbnailheight(std::shared_ptr<int64_t> value)
+        {
+            this->thumbnailheight = value;
+        }
 
-        std::shared_ptr<int64_t> get_widewidth() const { return widewidth; }
-        void set_widewidth(std::shared_ptr<int64_t> value) { this->widewidth = value; }
+        std::shared_ptr<int64_t> get_widewidth() const
+        {
+            return widewidth;
+        }
+        void set_widewidth(std::shared_ptr<int64_t> value)
+        {
+            this->widewidth = value;
+        }
 
-        std::shared_ptr<int64_t> get_wideheight() const { return wideheight; }
-        void set_wideheight(std::shared_ptr<int64_t> value) { this->wideheight = value; }
+        std::shared_ptr<int64_t> get_wideheight() const
+        {
+            return wideheight;
+        }
+        void set_wideheight(std::shared_ptr<int64_t> value)
+        {
+            this->wideheight = value;
+        }
 
-        std::shared_ptr<std::string> get_wide() const { return wide; }
-        void set_wide(std::shared_ptr<std::string> value) { this->wide = value; }
+        std::shared_ptr<std::string> get_wide() const
+        {
+            return wide;
+        }
+        void set_wide(std::shared_ptr<std::string> value)
+        {
+            this->wide = value;
+        }
     };
 
-    enum class Type : int { IMAGE };
+    enum class Type : int
+    {
+        IMAGE
+    };
 
-    class Multimedia {
+    class Multimedia
+    {
         public:
         Multimedia() = default;
         virtual ~Multimedia() = default;
@@ -455,45 +514,123 @@ namespace news_by_topic
         std::shared_ptr<std::string> crop_name;
 
         public:
-        std::shared_ptr<int64_t> get_rank() const { return rank; }
-        void set_rank(std::shared_ptr<int64_t> value) { this->rank = value; }
+        std::shared_ptr<int64_t> get_rank() const
+        {
+            return rank;
+        }
+        void set_rank(std::shared_ptr<int64_t> value)
+        {
+            this->rank = value;
+        }
 
-        std::shared_ptr<std::string> get_subtype() const { return subtype; }
-        void set_subtype(std::shared_ptr<std::string> value) { this->subtype = value; }
+        std::shared_ptr<std::string> get_subtype() const
+        {
+            return subtype;
+        }
+        void set_subtype(std::shared_ptr<std::string> value)
+        {
+            this->subtype = value;
+        }
 
-        const nlohmann::json & get_caption() const { return caption; }
-        nlohmann::json & get_mutable_caption() { return caption; }
-        void set_caption(const nlohmann::json & value) { this->caption = value; }
+        const nlohmann::json & get_caption() const
+        {
+            return caption;
+        }
+        nlohmann::json & get_mutable_caption()
+        {
+            return caption;
+        }
+        void set_caption(const nlohmann::json & value)
+        {
+            this->caption = value;
+        }
 
-        const nlohmann::json & get_credit() const { return credit; }
-        nlohmann::json & get_mutable_credit() { return credit; }
-        void set_credit(const nlohmann::json & value) { this->credit = value; }
+        const nlohmann::json & get_credit() const
+        {
+            return credit;
+        }
+        nlohmann::json & get_mutable_credit()
+        {
+            return credit;
+        }
+        void set_credit(const nlohmann::json & value)
+        {
+            this->credit = value;
+        }
 
-        std::shared_ptr<Type> get_type() const { return type; }
-        void set_type(std::shared_ptr<Type> value) { this->type = value; }
+        std::shared_ptr<Type> get_type() const
+        {
+            return type;
+        }
+        void set_type(std::shared_ptr<Type> value)
+        {
+            this->type = value;
+        }
 
-        std::shared_ptr<std::string> get_url() const { return url; }
-        void set_url(std::shared_ptr<std::string> value) { this->url = value; }
+        std::shared_ptr<std::string> get_url() const
+        {
+            return url;
+        }
+        void set_url(std::shared_ptr<std::string> value)
+        {
+            this->url = value;
+        }
 
-        std::shared_ptr<int64_t> get_height() const { return height; }
-        void set_height(std::shared_ptr<int64_t> value) { this->height = value; }
+        std::shared_ptr<int64_t> get_height() const
+        {
+            return height;
+        }
+        void set_height(std::shared_ptr<int64_t> value)
+        {
+            this->height = value;
+        }
 
-        std::shared_ptr<int64_t> get_width() const { return width; }
-        void set_width(std::shared_ptr<int64_t> value) { this->width = value; }
+        std::shared_ptr<int64_t> get_width() const
+        {
+            return width;
+        }
+        void set_width(std::shared_ptr<int64_t> value)
+        {
+            this->width = value;
+        }
 
-        std::shared_ptr<Legacy> get_legacy() const { return legacy; }
-        void set_legacy(std::shared_ptr<Legacy> value) { this->legacy = value; }
+        std::shared_ptr<Legacy> get_legacy() const
+        {
+            return legacy;
+        }
+        void set_legacy(std::shared_ptr<Legacy> value)
+        {
+            this->legacy = value;
+        }
 
-        std::shared_ptr<std::string> get_sub_type() const { return sub_type; }
-        void set_sub_type(std::shared_ptr<std::string> value) { this->sub_type = value; }
+        std::shared_ptr<std::string> get_sub_type() const
+        {
+            return sub_type;
+        }
+        void set_sub_type(std::shared_ptr<std::string> value)
+        {
+            this->sub_type = value;
+        }
 
-        std::shared_ptr<std::string> get_crop_name() const { return crop_name; }
-        void set_crop_name(std::shared_ptr<std::string> value) { this->crop_name = value; }
+        std::shared_ptr<std::string> get_crop_name() const
+        {
+            return crop_name;
+        }
+        void set_crop_name(std::shared_ptr<std::string> value)
+        {
+            this->crop_name = value;
+        }
     };
 
-    enum class TypeOfMaterial : int { BRIEFING, NEWS, OTHER };
+    enum class TypeOfMaterial: int
+    {
+        BRIEFING,
+        NEWS,
+        OTHER
+    };
     
-    class Doc {
+    class Doc
+    {
         public:
         Doc() = default;
         virtual ~Doc() = default;
@@ -521,68 +658,190 @@ namespace news_by_topic
         std::shared_ptr<std::string> print_page;
 
         public:
-        std::shared_ptr<std::string> get_abstract() const { return abstract; }
-        void set_abstract(std::shared_ptr<std::string> value) { this->abstract = value; }
+        std::shared_ptr<std::string> get_abstract() const
+        {
+            return abstract;
+        }
+        void set_abstract(std::shared_ptr<std::string> value)
+        {
+            this->abstract = value;
+        }
 
-        std::shared_ptr<std::string> get_web_url() const { return web_url; }
-        void set_web_url(std::shared_ptr<std::string> value) { this->web_url = value; }
+        std::shared_ptr<std::string> get_web_url() const
+        {
+            return web_url;
+        }
+        void set_web_url(std::shared_ptr<std::string> value)
+        {
+            this->web_url = value;
+        }
 
-        std::shared_ptr<std::string> get_snippet() const { return snippet; }
-        void set_snippet(std::shared_ptr<std::string> value) { this->snippet = value; }
+        std::shared_ptr<std::string> get_snippet() const
+        {
+            return snippet;
 
-        std::shared_ptr<std::string> get_lead_paragraph() const { return lead_paragraph; }
-        void set_lead_paragraph(std::shared_ptr<std::string> value) { this->lead_paragraph = value; }
+        }
+        void set_snippet(std::shared_ptr<std::string> value)
+        {
+            this->snippet = value;
+        }
 
-        std::shared_ptr<Source> get_source() const { return source; }
-        void set_source(std::shared_ptr<Source> value) { this->source = value; }
+        std::shared_ptr<std::string> get_lead_paragraph() const
+        {
+            return lead_paragraph;
+        }
+        void set_lead_paragraph(std::shared_ptr<std::string> value)
+        {
+            this->lead_paragraph = value;
+        }
 
-        std::shared_ptr<std::vector<Multimedia>> get_multimedia() const { return multimedia; }
-        void set_multimedia(std::shared_ptr<std::vector<Multimedia>> value) { this->multimedia = value; }
+        std::shared_ptr<Source> get_source() const
+        {
+            return source;
+        }
+        void set_source(std::shared_ptr<Source> value)
+        {
+            this->source = value;
+        }
 
-        std::shared_ptr<Headline> get_headline() const { return headline; }
-        void set_headline(std::shared_ptr<Headline> value) { this->headline = value; }
+        std::shared_ptr<std::vector<Multimedia>> get_multimedia() const
+        {
+            return multimedia;
+        }
+        void set_multimedia(std::shared_ptr<std::vector<Multimedia>> value)
+        {
+            this->multimedia = value;
+        }
 
-        std::shared_ptr<std::vector<Keyword>> get_keywords() const { return keywords; }
-        void set_keywords(std::shared_ptr<std::vector<Keyword>> value) { this->keywords = value; }
+        std::shared_ptr<Headline> get_headline() const
+        {
+            return headline;
+        }
+        void set_headline(std::shared_ptr<Headline> value)
+        {
+            this->headline = value;
+        }
 
-        std::shared_ptr<std::string> get_pub_date() const { return pub_date; }
-        void set_pub_date(std::shared_ptr<std::string> value) { this->pub_date = value; }
+        std::shared_ptr<std::vector<Keyword>> get_keywords() const
+        {
+            return keywords;
+        }
+        void set_keywords(std::shared_ptr<std::vector<Keyword>> value)
+        {
+            this->keywords = value;
+        }
 
-        std::shared_ptr<DocumentType> get_document_type() const { return document_type; }
-        void set_document_type(std::shared_ptr<DocumentType> value) { this->document_type = value; }
+        std::shared_ptr<std::string> get_pub_date() const
+        {
+            return pub_date;
+        }
+        void set_pub_date(std::shared_ptr<std::string> value)
+        {
+            this->pub_date = value;
+        }
 
-        std::shared_ptr<std::string> get_news_desk() const { return news_desk; }
-        void set_news_desk(std::shared_ptr<std::string> value) { this->news_desk = value; }
+        std::shared_ptr<DocumentType> get_document_type() const
+        {
+            return document_type;
+        }
+        void set_document_type(std::shared_ptr<DocumentType> value)
+        {
+            this->document_type = value;
+        }
 
-        std::shared_ptr<std::string> get_section_name() const { return section_name; }
-        void set_section_name(std::shared_ptr<std::string> value) { this->section_name = value; }
+        std::shared_ptr<std::string> get_news_desk() const
+        {
+            return news_desk;
+        }
+        void set_news_desk(std::shared_ptr<std::string> value)
+        {
+            this->news_desk = value;
+        }
 
-        std::shared_ptr<Byline> get_byline() const { return byline; }
-        void set_byline(std::shared_ptr<Byline> value) { this->byline = value; }
+        std::shared_ptr<std::string> get_section_name() const
+        {
+            return section_name;
+        }
+        void set_section_name(std::shared_ptr<std::string> value)
+        {
+            this->section_name = value;
+        }
 
-        std::shared_ptr<TypeOfMaterial> get_type_of_material() const { return type_of_material; }
-        void set_type_of_material(std::shared_ptr<TypeOfMaterial> value) { this->type_of_material = value; }
+        std::shared_ptr<Byline> get_byline() const
+        {
+            return byline;
+        }
+        void set_byline(std::shared_ptr<Byline> value)
+        {
+            this->byline = value;
+        }
 
-        std::shared_ptr<std::string> get_id() const { return id; }
-        void set_id(std::shared_ptr<std::string> value) { this->id = value; }
+        std::shared_ptr<TypeOfMaterial> get_type_of_material() const
+        {
+            return type_of_material;
+        }
+        void set_type_of_material(std::shared_ptr<TypeOfMaterial> value)
+        {
+            this->type_of_material = value;
+        }
 
-        std::shared_ptr<int64_t> get_word_count() const { return word_count; }
-        void set_word_count(std::shared_ptr<int64_t> value) { this->word_count = value; }
+        std::shared_ptr<std::string> get_id() const
+        {
+            return id;
+        }
+        void set_id(std::shared_ptr<std::string> value)
+        {
+            this->id = value;
+        }
 
-        std::shared_ptr<std::string> get_uri() const { return uri; }
-        void set_uri(std::shared_ptr<std::string> value) { this->uri = value; }
+        std::shared_ptr<int64_t> get_word_count() const
+        {
+            return word_count;
+        }
+        void set_word_count(std::shared_ptr<int64_t> value)
+        {
+            this->word_count = value;
+        }
 
-        std::shared_ptr<std::string> get_subsection_name() const { return subsection_name; }
-        void set_subsection_name(std::shared_ptr<std::string> value) { this->subsection_name = value; }
+        std::shared_ptr<std::string> get_uri() const
+        {
+            return uri;
+        }
+        void set_uri(std::shared_ptr<std::string> value)
+        {
+            this->uri = value;
+        }
 
-        std::shared_ptr<std::string> get_print_section() const { return print_section; }
-        void set_print_section(std::shared_ptr<std::string> value) { this->print_section = value; }
+        std::shared_ptr<std::string> get_subsection_name() const
+        {
+            return subsection_name;
+        }
+        void set_subsection_name(std::shared_ptr<std::string> value)
+        {
+            this->subsection_name = value;
+        }
 
-        std::shared_ptr<std::string> get_print_page() const { return print_page; }
-        void set_print_page(std::shared_ptr<std::string> value) { this->print_page = value; }
+        std::shared_ptr<std::string> get_print_section() const
+        {
+            return print_section;
+        }
+        void set_print_section(std::shared_ptr<std::string> value)
+        {
+            this->print_section = value;
+        }
+
+        std::shared_ptr<std::string> get_print_page() const
+        {
+            return print_page;
+        }
+        void set_print_page(std::shared_ptr<std::string> value)
+        {
+            this->print_page = value;
+        }
     };
 
-    class Meta {
+    class Meta
+    {
         public:
         Meta() = default;
         virtual ~Meta() = default;
@@ -593,17 +852,36 @@ namespace news_by_topic
         std::shared_ptr<int64_t> time;
 
         public:
-        std::shared_ptr<int64_t> get_hits() const { return hits; }
-        void set_hits(std::shared_ptr<int64_t> value) { this->hits = value; }
+        std::shared_ptr<int64_t> get_hits() const
+        {
+            return hits;
+        }
+        void set_hits(std::shared_ptr<int64_t> value)
+        {
+            this->hits = value;
+        }
 
-        std::shared_ptr<int64_t> get_offset() const { return offset; }
-        void set_offset(std::shared_ptr<int64_t> value) { this->offset = value; }
+        std::shared_ptr<int64_t> get_offset() const
+        {
+            return offset;
+        }
+        void set_offset(std::shared_ptr<int64_t> value)
+        {
+            this->offset = value;
+        }
 
-        std::shared_ptr<int64_t> get_time() const { return time; }
-        void set_time(std::shared_ptr<int64_t> value) { this->time = value; }
+        std::shared_ptr<int64_t> get_time() const
+        {
+            return time;
+        }
+        void set_time(std::shared_ptr<int64_t> value)
+        {
+            this->time = value;
+        }
     };
 
-    class Response {
+    class Response
+    {
         public:
         Response() = default;
         virtual ~Response() = default;
@@ -613,14 +891,27 @@ namespace news_by_topic
         std::shared_ptr<Meta> meta;
 
         public:
-        std::shared_ptr<std::vector<Doc>> get_docs() const { return docs; }
-        void set_docs(std::shared_ptr<std::vector<Doc>> value) { this->docs = value; }
+        std::shared_ptr<std::vector<Doc>> get_docs() const
+        {
+            return docs;
+        }
+        void set_docs(std::shared_ptr<std::vector<Doc>> value)
+        {
+            this->docs = value;
+        }
 
-        std::shared_ptr<Meta> get_meta() const { return meta; }
-        void set_meta(std::shared_ptr<Meta> value) { this->meta = value; }
+        std::shared_ptr<Meta> get_meta() const
+        {
+            return meta;
+        }
+        void set_meta(std::shared_ptr<Meta> value)
+        {
+            this->meta = value;
+        }
     };
 
-    class Welcome {
+    class Welcome
+    {
         public:
         Welcome() = default;
         virtual ~Welcome() = default;
@@ -631,14 +922,32 @@ namespace news_by_topic
         std::shared_ptr<Response> response;
 
         public:
-        std::shared_ptr<std::string> get_status() const { return status; }
-        void set_status(std::shared_ptr<std::string> value) { this->status = value; }
+        std::shared_ptr<std::string> get_status() const
+        {
+            return status;
+        }
+        void set_status(std::shared_ptr<std::string> value)
+        {
+            this->status = value;
+        }
 
-        std::shared_ptr<std::string> get_copyright() const { return copyright; }
-        void set_copyright(std::shared_ptr<std::string> value) { this->copyright = value; }
+        std::shared_ptr<std::string> get_copyright() const
+        {
+            return copyright;
+        }
+        void set_copyright(std::shared_ptr<std::string> value)
+        {
+            this->copyright = value;
+        }
 
-        std::shared_ptr<Response> get_response() const { return response; }
-        void set_response(std::shared_ptr<Response> value) { this->response = value; }
+        std::shared_ptr<Response> get_response() const
+        {
+            return response;
+        }
+        void set_response(std::shared_ptr<Response> value)
+        {
+            this->response = value;
+        }
     };
 }
 
