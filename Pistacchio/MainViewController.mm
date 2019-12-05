@@ -32,7 +32,7 @@
         NewsCollectionViewDelegate *nDelegate = [[NewsCollectionViewDelegate alloc] initWithTargetView:view];
         self.newsCollectionDelegate = nDelegate;
         {
-            [view registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kNewsCellIdentifier];
+            [view registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NEWS_COLLECTION_CELL_ID];
             view.backgroundColor = [UIColor cyanColor];
             [self.view addSubview:view];
             [view autoPinEdgesToSuperviewSafeArea];

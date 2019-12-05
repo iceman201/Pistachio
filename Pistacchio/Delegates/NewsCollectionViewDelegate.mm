@@ -7,6 +7,7 @@
 //
 
 #import "NewsCollectionViewDelegate.h"
+#import "SharedConstants.h"
 
 @interface NewsCollectionViewDelegate()
 //@property (nonatomic, weak) id<UICollectionViewDelegate> collectionViewDelegate;
@@ -37,7 +38,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kNewsCellIdentifier forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NEWS_COLLECTION_CELL_ID forIndexPath:indexPath];
     cell.backgroundColor = [UIColor redColor];
     return cell;
 }

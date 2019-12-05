@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		050D2EDE239383BB00CC296E /* News.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EDD239383BB00CC296E /* News.cpp */; };
 		050D2EE62397C82A00CC296E /* NewsCollectionViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EE52397C82A00CC296E /* NewsCollectionViewDelegate.mm */; };
-		050D2EEB2397D6A800CC296E /* SharedIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EEA2397D6A800CC296E /* SharedIdentifiers.m */; };
+		050D2EEB2397D6A800CC296E /* SharedConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 050D2EEA2397D6A800CC296E /* SharedConstants.m */; };
 		05FAB0AD23925339005EDE16 /* NetworkServices.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0AC23925339005EDE16 /* NetworkServices.mm */; };
 		05FAB0B12392641E005EDE16 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FAB0B02392641E005EDE16 /* Services.plist */; };
 		05FAB0B423926A45005EDE16 /* BaseViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 05FAB0B323926A45005EDE16 /* BaseViewController.mm */; };
@@ -49,8 +49,8 @@
 		050D2EE12397C7B200CC296E /* Pistacchio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pistacchio-Bridging-Header.h"; sourceTree = "<group>"; };
 		050D2EE42397C82A00CC296E /* NewsCollectionViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCollectionViewDelegate.h; sourceTree = "<group>"; };
 		050D2EE52397C82A00CC296E /* NewsCollectionViewDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NewsCollectionViewDelegate.mm; sourceTree = "<group>"; };
-		050D2EE92397D6A800CC296E /* SharedIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedIdentifiers.h; sourceTree = "<group>"; };
-		050D2EEA2397D6A800CC296E /* SharedIdentifiers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedIdentifiers.m; sourceTree = "<group>"; };
+		050D2EE92397D6A800CC296E /* SharedConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedConstants.h; sourceTree = "<group>"; };
+		050D2EEA2397D6A800CC296E /* SharedConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedConstants.m; sourceTree = "<group>"; };
 		05FAB0AB23925339005EDE16 /* NetworkServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkServices.h; path = Pistacchio/Services/NetworkServices.h; sourceTree = SOURCE_ROOT; };
 		05FAB0AC23925339005EDE16 /* NetworkServices.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = NetworkServices.mm; path = Pistacchio/Services/NetworkServices.mm; sourceTree = SOURCE_ROOT; };
 		05FAB0AF23925F61005EDE16 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 			children = (
 				05FAB0B223926A45005EDE16 /* BaseViewController.h */,
 				05FAB0B323926A45005EDE16 /* BaseViewController.mm */,
-				050D2EE92397D6A800CC296E /* SharedIdentifiers.h */,
-				050D2EEA2397D6A800CC296E /* SharedIdentifiers.m */,
+				050D2EE92397D6A800CC296E /* SharedConstants.h */,
+				050D2EEA2397D6A800CC296E /* SharedConstants.m */,
 				EAFC4AF12390AD3A003CC2AD /* AppDelegate.h */,
 				EAFC4AF22390AD3A003CC2AD /* AppDelegate.mm */,
 				EAFC4AF42390AD3A003CC2AD /* SceneDelegate.h */,
@@ -490,7 +490,7 @@
 				EAFC4AF92390AD3A003CC2AD /* MainViewController.mm in Sources */,
 				05FAB0B423926A45005EDE16 /* BaseViewController.mm in Sources */,
 				EAFC4AF32390AD3A003CC2AD /* AppDelegate.mm in Sources */,
-				050D2EEB2397D6A800CC296E /* SharedIdentifiers.m in Sources */,
+				050D2EEB2397D6A800CC296E /* SharedConstants.m in Sources */,
 				EAFC4B042390AD3E003CC2AD /* main.m in Sources */,
 				050D2EDE239383BB00CC296E /* News.cpp in Sources */,
 				05FAB0AD23925339005EDE16 /* NetworkServices.mm in Sources */,

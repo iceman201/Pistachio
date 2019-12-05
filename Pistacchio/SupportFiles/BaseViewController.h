@@ -10,6 +10,7 @@
 #import <PureLayout/PureLayout.h>
 #import "macros.h"
 #include "NetworkServices.h"
+#import "SharedConstants.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
