@@ -43,31 +43,19 @@
     return cell;
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(nonnull UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    CGSize itemSize = [(UICollectionViewFlowLayout *)collectionViewLayout itemSize];
-    CGFloat spacing = [(UICollectionViewFlowLayout *)collectionViewLayout minimumLineSpacing];
-
-    NSInteger count = 1;
-    CGFloat totalCellWidth = itemSize.width * count;
-    CGFloat totalSpacingWidth = spacing * ((count - 1) < 0 ? 0 : count - 1);
-    CGFloat leftInset = (collectionView.bounds.size.width - (totalCellWidth + totalSpacingWidth)) / 2;
-    if (leftInset < 0)
-    {
-        UIEdgeInsets inset = [(UICollectionViewFlowLayout *)collectionViewLayout sectionInset];
-        return inset;
-    }
-    CGFloat rightInset = leftInset;
-    CGFloat topInsert = DEFAULT_PADDING * (CGFloat)2;
-    UIEdgeInsets sectionInset = UIEdgeInsetsMake(topInsert, leftInset, 0, rightInset);
-    return sectionInset;
+    return UIEdgeInsetsMake(DEFAULT_PADDING*2, 0, DEFAULT_PADDING*5, 0);
 }
-//
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//
-//}
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat width = collectionView.safeAreaLayoutGuide.layoutFrame.size.width - DEFAULT_PADDING * 6;
+    CGFloat height = collectionView.frame.size.width/2;
+
+    CGSize defaultSize = CGSizeMake(width, height);
+    return defaultSize;
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {

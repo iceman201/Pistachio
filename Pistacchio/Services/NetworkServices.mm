@@ -54,7 +54,8 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         STRONG_SELF_OR_RETURN;
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-        switch ([httpResponse statusCode]) {
+        switch ([httpResponse statusCode])
+        {
             case 200:
                 if (data != nil)
                 {

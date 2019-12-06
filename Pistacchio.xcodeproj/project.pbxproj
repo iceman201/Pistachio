@@ -188,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				EAFC4AF02390AD3A003CC2AD /* Pistacchio */,
+				05FAB0B623926ADA005EDE16 /* Storyboards */,
 				EAFC4B0C2390AD3E003CC2AD /* PistacchioTests */,
 				EAFC4B172390AD3E003CC2AD /* PistacchioUITests */,
 				EAFC4AEF2390AD3A003CC2AD /* Products */,
@@ -216,7 +217,6 @@
 				050D2EDF2397C12B00CC296E /* Delegates */,
 				EAFC4AF72390AD3A003CC2AD /* MainViewController.h */,
 				EAFC4AF82390AD3A003CC2AD /* MainViewController.mm */,
-				05FAB0B623926ADA005EDE16 /* Storyboards */,
 				05FAB0B523926A81005EDE16 /* SupportFiles */,
 				EAFC4B022390AD3E003CC2AD /* Info.plist */,
 				EAFDA44D2398A89300BE73F4 /* Services.plist */,

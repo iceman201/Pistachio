@@ -18,16 +18,16 @@
 - (void)loadView
 {
     [super loadView];
-    [self.view setBackgroundColor:[UIColor systemBackgroundColor]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     [self shouldShowTopBar:YES];
 
     UIView *newsContentContainer = [[UIView alloc] initForAutoLayout];
-    newsContentContainer.backgroundColor = [UIColor greenColor];
+    newsContentContainer.backgroundColor = [UIColor blueColor];
     [self.view addSubview:newsContentContainer];
-    [newsContentContainer autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.topBar withOffset:DEFAULT_PADDING*2];
+    [newsContentContainer autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.topBar];
     [newsContentContainer autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view];
     [newsContentContainer autoPinEdgeToSuperviewSafeArea:ALEdgeBottom];
-    [self.view setNeedsDisplay];
+    [self.view layoutSubviews];
     {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
@@ -36,10 +36,12 @@
         NewsCollectionViewDelegate *nDelegate = [[NewsCollectionViewDelegate alloc] initWithTargetView:view];
         self.newsCollectionDelegate = nDelegate;
         {
+            [view setBackgroundColor:[UIColor whiteColor]];
             [view registerClass:[NewsCViewCell class] forCellWithReuseIdentifier:NEWS_COLLECTION_CELL_ID];
-            view.backgroundColor = [UIColor cyanColor];
-            [self.view addSubview:view];
-            [view autoPinEdgesToSuperviewSafeArea];
+            [newsContentContainer addSubview:view];
+            [view autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:newsContentContainer];
+            [view autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:DEFAULT_PADDING];
+            [view autoPinEdgeToSuperviewEdge:ALEdgeBottom];
         }
     }
 }
@@ -47,7 +49,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
 }
 
 - (void)tapTest
