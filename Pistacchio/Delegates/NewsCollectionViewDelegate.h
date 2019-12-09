@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetworkServices.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsCollectionViewDelegate : NSObject <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
-- (instancetype)initWithTargetView:(UICollectionView *)view;
+- (instancetype)initWithTargetView:(UICollectionView *)view data:(std::shared_ptr<std::vector<news_by_topic::Doc>>)news;
 @end
 
 NS_ASSUME_NONNULL_END

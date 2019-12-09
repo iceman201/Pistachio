@@ -4,5 +4,7 @@
 <dict>
 	<key>ArticleSearch</key>
 	<string>https://api.nytimes.com/svc/search/v2/articlesearch.json</string>
+	<key>StaticSource</key>
+	<string>https://static01.nyt.com</string>
 </dict>
 </plist>

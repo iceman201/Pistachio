@@ -1,7 +1,7 @@
 #import "SceneDelegate.h"
 #import "NetworkServices.h"
 #import "MainViewController.h"
-
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface SceneDelegate ()
 @property (nonatomic, strong) NetworkServices *services;
@@ -17,23 +17,14 @@
         NetworkServices *services = [[NetworkServices alloc] init];
         [services setDelegate:self];
         self.services = services;
-        [services serviceStart];
     }
     return self;
 }
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions
 {
-    // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-    // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-    // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-    
     UIWindowScene *windowsScene = (UIWindowScene *)scene;
     self.window = [[UIWindow alloc] initWithWindowScene:windowsScene];
-    MainViewController *controller = [[MainViewController alloc] initWithNetworkServices:self.services];
-    self.window.rootViewController = controller;
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
 }
 
 
@@ -74,5 +65,12 @@
     // to restore the scene back to its current state.
 }
 
+- (void)serviceStart:(BOOL)success
+{
+    MainViewController *controller = [[MainViewController alloc] initWithNetworkServices:self.services];
+    self.window.rootViewController = controller;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+}
 
 @end

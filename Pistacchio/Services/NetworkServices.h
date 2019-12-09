@@ -13,12 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NetworkServicesDelegate;
 @protocol NetworkServicesDelegate <NSObject>
-- (void)serviceStart;
+@required
+- (void)serviceStart:(BOOL)success;
+@optional
+- (void)didReceiveNewsData:(std::shared_ptr<std::vector<news_by_topic::Doc>>)news;
 @end
 
-@interface NetworkServices:NSObject <NetworkServicesDelegate>
-- (void)setDelegate:(id)delegate;
-- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getNewsTopic;
+@interface NetworkServices:NSObject
+@property (nonatomic, weak) id<NetworkServicesDelegate> delegate;
+
+- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getNewsData;
 @end
 
 NS_ASSUME_NONNULL_END

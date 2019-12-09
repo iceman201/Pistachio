@@ -39,7 +39,6 @@
     self.topBar = topBar;
     {
         UIButton *back = [[UIButton alloc] initForAutoLayout];
-//        [back setTitle:@"back" forState:UIControlStateNormal];
         [back setImage:[UIImage systemImageNamed:@"arrow.left"] forState:UIControlStateNormal];
         [back setTintColor:[UIColor lightGrayColor]];
         [back addTarget:self action:@selector(tapBack) forControlEvents:UIControlEventTouchUpInside];

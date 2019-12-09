@@ -1,26 +1,30 @@
 PODS:
   - nlohmann_json (3.5.0)
-  - NVActivityIndicatorView (4.8.0):
-    - NVActivityIndicatorView/Presenter (= 4.8.0)
-  - NVActivityIndicatorView/Presenter (4.8.0)
   - PureLayout (3.1.5)
+  - SDWebImage (5.4.0):
+    - SDWebImage/Core (= 5.4.0)
+  - SDWebImage/Core (5.4.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - nlohmann_json (~> 3.5.0)
-  - NVActivityIndicatorView
   - PureLayout
+  - SDWebImage
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
     - nlohmann_json
-    - NVActivityIndicatorView
     - PureLayout
+    - SDWebImage
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   nlohmann_json: 022916edfe803dbae86ada9799ca550f005e1daf
-  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
+  SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: c866220ae6c4506ec0a91ff4b71037500338db2c
+PODFILE CHECKSUM: 78b66b48f5cf95e35987695499e09f484e3c40a1
 
 COCOAPODS: 1.8.4

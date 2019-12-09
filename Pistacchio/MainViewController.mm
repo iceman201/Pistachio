@@ -33,8 +33,10 @@
         [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
 
         UICollectionView *view = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-        NewsCollectionViewDelegate *nDelegate = [[NewsCollectionViewDelegate alloc] initWithTargetView:view];
+        auto news = [self.services getNewsData];
+        NewsCollectionViewDelegate *nDelegate = [[NewsCollectionViewDelegate alloc] initWithTargetView:view data:news];
         self.newsCollectionDelegate = nDelegate;
+        [view reloadData];
         {
             [view setBackgroundColor:[UIColor whiteColor]];
             [view registerClass:[NewsCViewCell class] forCellWithReuseIdentifier:NEWS_COLLECTION_CELL_ID];
@@ -55,6 +57,5 @@
 {
 //    [self.services serviceStart];
 }
-
 
 @end
