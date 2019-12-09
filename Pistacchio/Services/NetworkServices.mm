@@ -9,30 +9,38 @@
 #import "NetworkServices.h"
 #import "macros.h"
 
-
 @interface NetworkServices()
-{
-    std::shared_ptr<std::vector<news_by_topic::Doc>> docs;
-}
-@property (nonatomic, weak) id<NetworkServicesDelegate> delegate;
-
 @end
 
 @implementation NetworkServices
-
-- (void)setDelegate:(id)delegate
 {
-    _delegate = delegate;
+    std::shared_ptr<std::vector<news_by_topic::Doc>> _news;
 }
 
-- (void)serviceStart
+- (instancetype)init
 {
-    [self fetchAllNewsData:^(BOOL success) {
-        if (success)
-        {
-            NSLog(@"haha");
-        }
-    }];
+    self = [super init];
+    if (self)
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [self fetchAllNewsData:^(BOOL success, std::shared_ptr<std::vector<news_by_topic::Doc> > news) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (success)
+                    {
+                        [self.delegate serviceStart:YES];
+                        if ([self.delegate respondsToSelector:@selector(didReceiveNewsData:)]) {
+                            [self.delegate didReceiveNewsData:news];
+                        }
+                    }
+                    else
+                    {
+                        [self.delegate serviceStart:NO];
+                    }
+                });
+            }];
+        });
+    }
+    return self;
 }
 
 - (NSString *)getServerAddress
@@ -46,7 +54,7 @@
     return apiUrl;
 }
 
-- (void)fetchAllNewsData:(void(^) (BOOL success))finished
+- (void)fetchAllNewsData:(void(^) (BOOL success, std::shared_ptr<std::vector<news_by_topic::Doc>> news))finished
 {
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[self getServerAddress]]];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -63,24 +71,25 @@
                     const char * _Nullable text = [jsonString UTF8String];
                     news_by_topic::json data = news_by_topic::json::parse(text);
                     auto news = data.get<news_by_topic::Welcome>();
-                    self->docs = news.get_response()->get_docs();
-                    finished(YES);
+                    auto result = news.get_response() -> get_docs();
+                    self->_news = result;
+                    if (result != nullptr)
+                    {
+                        finished(YES, result);
+                        break;
+                    }
                 }
-                else
-                {
-                    finished(NO);
-                }
-                break;
             default:
-                finished(NO);
+                finished(NO, NULL);
                 break;
         };
     }];
     [task resume];
 }
 
-- (std::shared_ptr<std::vector<news_by_topic::Doc>>)getNews
+- (std::shared_ptr<std::vector<news_by_topic::Doc> >)getNewsData
 {
-    return self -> docs;
+    return _news;
 }
+
 @end
